@@ -8,272 +8,272 @@ export type GetClientVersionParams = Record<string, never>;
 export type GetServerVersionParams = Record<string, never>;
 
 export type GetBucketizedDataParams = {
-leaderboardName: string;
+  leaderboardName: string;
 };
 
 export type GetAppListParams = Record<string, never>;
 
 export type GetSDRConfigParams = {
-appid: number;
+  appid: number;
 };
 
 export type GetServersAtAddressParams = {
-addr: string;
+  addr: string;
 };
 
 export type UpToDateCheckParams = {
-appid: number;
-version: number;
+  appid: number;
+  version: number;
 };
 
 export type PlayerStatsParams = Record<string, never>;
 
 export type ViewerHeartbeatParams = {
-steamid: number;
-sessionid: number;
-token: number;
-stream?: any | undefined;
+  steamid: number;
+  sessionid: number;
+  token: number;
+  stream?: any | undefined;
 };
 
 export type GetCMListParams = {
-cellid: number;
-maxcount?: number | undefined;
+  cellid: number;
+  maxcount?: number | undefined;
 };
 
 export type GetCMListForConnectParams = {
-cellid?: number | undefined;
-cmtype?: string | undefined;
-realm?: string | undefined;
-maxcount?: number | undefined;
-qoslevel?: number | undefined;
+  cellid?: number | undefined;
+  cmtype?: string | undefined;
+  realm?: string | undefined;
+  maxcount?: number | undefined;
+  qoslevel?: number | undefined;
 };
 
 export type GetSteamPipeDomainsParams = Record<string, never>;
 
 export type GetNewsForAppParams = {
-appid: number;
-maxlength?: number | undefined;
-enddate?: number | undefined;
-count?: number | undefined;
-feeds?: string | undefined;
-tags?: string | undefined;
+  appid: number;
+  maxlength?: number | undefined;
+  enddate?: number | undefined;
+  count?: number | undefined;
+  feeds?: string | undefined;
+  tags?: string | undefined;
 };
 
 export type GetCollectionDetailsParams = {
-collectioncount: number;
-'publishedfileids[0]': number;
+  collectioncount: number;
+  'publishedfileids[0]': number;
 };
 
 export type GetPublishedFileDetailsParams = {
-itemcount: number;
-'publishedfileids[0]': number;
+  itemcount: number;
+  'publishedfileids[0]': number;
 };
 
 export type GetTokenDetailsParams = {
-access_token: string;
+  access_token: string;
 };
 
 export type GetGlobalAchievementPercentagesForAppParams = {
-gameid: number;
+  gameid: number;
 };
 
 export type GetGlobalStatsForGameParams = {
-appid: number;
-count: number;
-'name[0]': string;
-startdate?: number | undefined;
-enddate?: number | undefined;
+  appid: number;
+  count: number;
+  'name[0]': string;
+  startdate?: number | undefined;
+  enddate?: number | undefined;
 };
 
 export type GetNumberOfCurrentPlayersParams = {
-appid: number;
+  appid: number;
 };
 
 export type GetServerInfoParams = Record<string, never>;
 
 export type GetSupportedAPIListParams = {
-key?: string | undefined;
+  key?: string | undefined;
 };
 
 export type GetWorldStatusParams = Record<string, never>;
 
 export type PollAuthSessionStatusParams = {
-client_id: number;
-request_id: string;
-token_to_revoke: number;
+  client_id: number;
+  request_id: string;
+  token_to_revoke: number;
 };
 
 export type GetAuthSessionInfoParams = {
-client_id: number;
+  client_id: number;
 };
 
 export type GetAuthSessionRiskInfoParams = {
-client_id: number;
-language: number;
+  client_id: number;
+  language: number;
 };
 
 export type NotifyRiskQuizResultsParams = {
-client_id: number;
-results: any;
-selected_action: string;
-did_confirm_login: boolean;
+  client_id: number;
+  results: any;
+  selected_action: string;
+  did_confirm_login: boolean;
 };
 
 export type GetPasswordRSAPublicKeyParams = {
-account_name: string;
+  account_name: string;
 };
 
 export type BeginAuthSessionViaCredentialsParams = {
-device_friendly_name: string;
-account_name: string;
-encrypted_password: string;
-encryption_timestamp: number;
-remember_login: boolean;
-platform_type: any;
-persistence?: any | undefined;
-website_id?: string | undefined;
-device_details: any;
-guard_data: string;
-language: number;
-qos_level?: any | undefined;
+  device_friendly_name: string;
+  account_name: string;
+  encrypted_password: string;
+  encryption_timestamp: number;
+  remember_login: boolean;
+  platform_type: any;
+  persistence?: any | undefined;
+  website_id?: string | undefined;
+  device_details: any;
+  guard_data: string;
+  language: number;
+  qos_level?: any | undefined;
 };
 
 export type UpdateAuthSessionWithSteamGuardCodeParams = {
-client_id: number;
-steamid: number;
-code: string;
-code_type: any;
+  client_id: number;
+  steamid: number;
+  code: string;
+  code_type: any;
 };
 
 export type BeginAuthSessionViaQRParams = {
-device_friendly_name: string;
-platform_type: any;
-device_details: any;
-website_id?: string | undefined;
+  device_friendly_name: string;
+  platform_type: any;
+  device_details: any;
+  website_id?: string | undefined;
 };
 
 export type UpdateAuthSessionWithMobileConfirmationParams = {
-version: any;
-client_id: number;
-steamid: number;
-signature: string;
-confirm?: boolean | undefined;
-persistence?: any | undefined;
+  version: any;
+  client_id: number;
+  steamid: number;
+  signature: string;
+  confirm?: boolean | undefined;
+  persistence?: any | undefined;
 };
 
 export type PostGameDataFrameRTMPParams = {
-appid: number;
-steamid: number;
-rtmp_token: string;
-frame_data: string;
+  appid: number;
+  steamid: number;
+  rtmp_token: string;
+  frame_data: string;
 };
 
 export type GetCDNForVideoParams = {
-property_type: any;
-client_ip: string;
-client_region: string;
+  property_type: any;
+  client_ip: string;
+  client_region: string;
 };
 
 export type PickSingleContentServerParams = {
-property_type: any;
-cell_id: number;
-client_ip: string;
+  property_type: any;
+  cell_id: number;
+  client_ip: string;
 };
 
 export type GetServersForSteamPipeParams = {
-cell_id: number;
-max_servers?: number | undefined;
-ip_override?: string | undefined;
-launcher_type?: any | undefined;
-ipv6_public?: string | undefined;
-current_connections: any;
+  cell_id: number;
+  max_servers?: number | undefined;
+  ip_override?: string | undefined;
+  launcher_type?: any | undefined;
+  ipv6_public?: string | undefined;
+  current_connections: any;
 };
 
 export type GetClientUpdateHostsParams = {
-cached_signature: string;
+  cached_signature: string;
 };
 
 export type GetDepotPatchInfoParams = {
-appid: number;
-depotid: number;
-source_manifestid: number;
-target_manifestid: number;
+  appid: number;
+  depotid: number;
+  source_manifestid: number;
+  target_manifestid: number;
 };
 
 export type GetUserVoteSummaryParams = {
-publishedfileids: number;
+  publishedfileids: number;
 };
 
 export type RecordOfflinePlaytimeParams = {
-steamid: number;
-ticket: string;
-play_sessions: any;
+  steamid: number;
+  ticket: string;
+  play_sessions: any;
 };
 
 export type UserCreateSessionParams = {
-appid: number;
-context: number;
-title: any;
-users: any;
-steamid: number;
+  appid: number;
+  context: number;
+  title: any;
+  users: any;
+  steamid: number;
 };
 
 export type UserUpdateSessionParams = {
-sessionid: number;
-appid: number;
-title: any;
-users: any;
-steamid: number;
+  sessionid: number;
+  appid: number;
+  title: any;
+  users: any;
+  steamid: number;
 };
 
 export type UserDeleteSessionParams = {
-sessionid: number;
-appid: number;
-steamid: number;
+  sessionid: number;
+  appid: number;
+  steamid: number;
 };
 
 export type GetWishlistSortedFilteredParams = {
-steamid: number;
-context: any;
-data_request: any;
-sort_order?: any | undefined;
-filters: any;
-start_index?: any | undefined;
-page_size?: any | undefined;
+  steamid: number;
+  context: any;
+  data_request: any;
+  sort_order?: any | undefined;
+  filters: any;
+  start_index?: any | undefined;
+  page_size?: any | undefined;
 };
 
 export type GetWishlistParams = {
-steamid: number;
+  steamid: number;
 };
 
 export type GetWishlistItemCountParams = {
-steamid: number;
+  steamid: number;
 };
 
 export type GetGamesFollowedParams = {
-steamid: number;
+  steamid: number;
 };
 
 export type GetGamesFollowedCountParams = {
-steamid: number;
+  steamid: number;
 };
 
 export type GetRecommendedTagsForUserParams = {
-language: string;
-country_code: string;
-favor_rarer_tags: boolean;
+  language: string;
+  country_code: string;
+  favor_rarer_tags: boolean;
 };
 
 export type UploadUserApplicationLogParams = {
-appid: number;
-log_type: string;
-version_string: string;
-log_contents: string;
-request_id: number;
+  appid: number;
+  log_type: string;
+  version_string: string;
+  log_contents: string;
+  request_id: number;
 };
 
 export type GetApplicationLogDemandParams = {
-appid: number;
+  appid: number;
 };
 
 export type InterfaceName = 'IClientStats_1046930' | 'IGCVersion_1046930' | 'IGCVersion_1269260' | 'IGCVersion_1422450' | 'IGCVersion_440' | 'IGCVersion_570' | 'IGCVersion_583950' | 'IGCVersion_730' | 'IPortal2Leaderboards_620' | 'ISteamApps' | 'ISteamBroadcast' | 'ISteamDirectory' | 'ISteamNews' | 'ISteamRemoteStorage' | 'ISteamUserOAuth' | 'ISteamUserStats' | 'ISteamWebAPIUtil' | 'ITFSystem_440' | 'IAuthenticationService' | 'IBroadcastService' | 'IContentServerDirectoryService' | 'IPublishedFileService' | 'IPlayerService' | 'IGameNotificationsService' | 'IWishlistService' | 'IStoreService' | 'IHelpRequestLogsService';

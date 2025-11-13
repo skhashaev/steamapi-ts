@@ -10,6 +10,7 @@ export interface Parameter {
   optional: boolean;
   description: string | undefined;
 }
+
 // --- CONFIGURATION ---
 const DEFINITION_PATH = path.join(process.cwd(), 'src/api-definition.json');
 const OUTPUT_PATH = path.join(process.cwd(), 'src/generated.ts');
@@ -33,9 +34,12 @@ const toTsType = (apiType: string): string => {
   }
 };
 
+const indentLines = (lines: string[], indentLevel = 2): string =>
+  lines.map(line => `${' '.repeat(indentLevel)}${line}`).join('\n');
+
 // Main function to generate the types file
 function generateApiTypes() {
-  console.log(`Reading API definition from: ${DEFINITION_PATH}`);
+  console.log(`📄 Reading API definition from: ${DEFINITION_PATH}`);
 
   if (!fs.existsSync(DEFINITION_PATH)) {
     console.error(`❌ Error: API definition file not found at ${DEFINITION_PATH}`);
@@ -77,7 +81,7 @@ function generateApiTypes() {
       }
 
       const paramsTypeBody =
-        paramsProps.length > 0 ? `{\n${paramsProps.join('\n')}\n}` : 'Record<string, never>';
+        paramsProps.length > 0 ? `{\n${indentLines(paramsProps)}\n}` : 'Record<string, never>';
 
       paramTypeDefinitions.set(
         paramsTypeName,
@@ -101,16 +105,19 @@ function generateApiTypes() {
   const interfaceUnion = Array.from(interfaceNames)
     .map(n => `'${n}'`)
     .join(' | ');
+
   generatedContent += `export type InterfaceName = ${interfaceUnion || 'never'};\n\n`;
 
   // C. Generate Conditional Method Names Union
   generatedContent += 'export type MethodName<I extends InterfaceName> = \n';
+
   apiDef.apilist.interfaces.forEach(apiInterface => {
     const methods = methodNamesPerInterface.get(apiInterface.name) ?? [];
     const methodsUnion = methods.length > 0 ? methods.join(' | ') : 'never';
 
     generatedContent += `  I extends '${apiInterface.name}' ? ${methodsUnion || 'never'} :\n`;
   });
+
   generatedContent += '  never;\n\n';
 
   // D. Generate the parameter mapping utility (crucial for MyClientType)
