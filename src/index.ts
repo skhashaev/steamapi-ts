@@ -6,9 +6,9 @@ const api = await import('./api-definition.json', { assert: { type: 'json' } });
 import type { InterfaceName, MethodName } from './generated.js';
 
 export type API = typeof api;
-
+// export type Parameters = API['default']['apilist']['interfaces'][number]['methods'][number]{'pa'}
 type ClientMethod<I extends InterfaceName, M extends MethodName<I>> = 
-  (params: any) => Promise<any>; 
+  (params: any ) => Promise<any>; 
   // You would replace 'any' with the specific parameter type logic if you generate it.
 
 // 3. Define the full MyClientType using Mapped Types over the generated union types
@@ -34,17 +34,9 @@ function createClient(): MyClientType {
   return resultApi 
 }
 
-const test: Record<string, string> = {
-  name: 'test'
-}
-
-
-
-
-
 const steam = createClient();
 
-console.log('---', steam)
+console.log('---', steam.ISteamApps.GetAppList({}))
 
 // init
 const accessToken = process.env.ACCESS_TOKEN;

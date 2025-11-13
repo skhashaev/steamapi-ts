@@ -10,7 +10,9 @@
     "build": "tsc",
     "start": "node dist/index.js",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "generate-api-types": "node --loader ts-node/esm src/generate-api-types.ts"
+    "generate-api-types": "tsx src/generate-api-types.ts",
+    "format": "prettier --write .",
+    "format:check": "prettier --check ."
   },
   "keywords": [
     "steam",
@@ -20,7 +22,9 @@
   "license": "ISC",
   "devDependencies": {
     "@types/node": "^24.7.1",
+    "prettier": "^3.6.2",
     "ts-node": "^10.9.2",
+    "tsx": "^4.19.2",
     "typescript": "^5.9.3"
   },
   "dependencies": {
