@@ -19,7 +19,7 @@ The library is a side project from the main one - we were in need some simple **
 ## Installation
 
 ```bash
-npm install steamapi-ts
+npm install steam-web-api-ts
 ```
 
 ## Quick Start
@@ -37,7 +37,7 @@ Get your Steam API key from: https://steamcommunity.com/dev/apikey
 ### 2. Use the client
 
 ```typescript
-import { createSteamClient } from 'steamapi-ts';
+import { createSteamClient } from 'steam-web-api-ts';
 import 'dotenv/config';
 
 const steam = createSteamClient(process.env.API_KEY!);
