@@ -1,17 +1,24 @@
 {
-  "name": "steamapi",
+  "name": "steamapi-ts",
   "version": "0.0.1",
   "description": "Steam API powered by TypeScript",
   "type": "module",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "scripts": {
+    "build": "tsc",
+    "prepublishOnly": "npm run build",
     "dev": "node --loader ts-node/esm src/index.ts",
     "generate-api-types": "tsx src/generate-api-types.ts",
     "fetch-api": "tsx src/fetch-api.ts",
     "format": "prettier --write .",
     "format:check": "prettier --check ."
   },
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE"
+  ],
   "keywords": [
     "steam",
     "api",
@@ -28,5 +35,13 @@
   },
   "dependencies": {
     "dotenv": "^17.2.3"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/skhashaev/steamapi-ts.git"
+  },
+  "bugs": {
+    "url": "https://github.com/skhashaev/steamapi-ts/issues"
+  },
+  "homepage": "https://github.com/skhashaev/steamapi-ts#readme"
 }

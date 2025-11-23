@@ -13,7 +13,7 @@ A fully typed TypeScript client for the Steam Web API with automatic type genera
 ## Installation
 
 ```bash
-npm install
+npm install steamapi-ts
 ```
 
 ## Quick Start
@@ -31,7 +31,7 @@ Get your Steam API key from: https://steamcommunity.com/dev/apikey
 ### 2. Use the client
 
 ```typescript
-import { createSteamClient } from './src/index.js';
+import { createSteamClient } from 'steamapi-ts';
 import 'dotenv/config';
 
 const steam = createSteamClient(process.env.API_KEY!);
@@ -75,73 +75,6 @@ try {
 }
 ```
 
-## Updating API Definitions
-
-The library can be updated to reflect the latest Steam API changes:
-
-### 1. Fetch the latest API definition
-
-```bash
-npm run fetch-api
-```
-
-This fetches the current API definition from Steam and saves it to `src/api-definition.json`.
-
-### 2. Generate TypeScript types
-
-```bash
-npm run generate-api-types
-```
-
-This generates TypeScript types from the API definition and saves them to `src/generated.ts`.
-
-### 3. Complete update workflow
-
-```bash
-npm run fetch-api
-npm run generate-api-types
-```
-
-## Available Scripts
-
-- `npm run build` - Compile TypeScript to JavaScript
-- `npm run fetch-api` - Fetch the latest Steam API definition
-- `npm run generate-api-types` - Generate TypeScript types from API definition
-- `npm run test:console` - Run the console test script
-- `npm run format` - Format code with Prettier
-- `npm run format:check` - Check code formatting
-
-## Project Structure
-
-```
-steamapi/
-├── src/
-│   ├── client.ts              # Main client implementation
-│   ├── index.ts               # Public exports
-│   ├── fetch-api.ts           # Script to fetch API definition
-│   ├── generate-api-types.ts  # Type generator script
-│   ├── api-definition.json    # Steam API definition (auto-generated)
-│   ├── generated.ts           # Generated TypeScript types (auto-generated)
-│   └── console-test.ts        # Example usage script
-├── .env                       # Environment variables (API key)
-├── package.json
-├── tsconfig.json
-└── README.md
-```
-
-## How It Works
-
-1. **API Definition**: The `fetch-api.ts` script calls Steam's `GetSupportedAPIList` endpoint to retrieve the complete API definition
-2. **Type Generation**: The `generate-api-types.ts` script parses the API definition and generates:
-   - Parameter types for each method
-   - Interface and method name unions
-   - Runtime metadata for URL construction
-3. **Client**: The `client.ts` uses Proxy objects to dynamically handle API calls:
-   - Constructs the correct URL based on interface, method, and version
-   - Injects the API key automatically
-   - Handles both GET and POST requests
-   - Returns typed responses
-
 ## Type Safety
 
 The client provides full IntelliSense support:
@@ -150,6 +83,7 @@ The client provides full IntelliSense support:
 const steam = createSteamClient(apiKey);
 
 // TypeScript knows all available interfaces
+steam.IStoreService;
 //    ^ IntelliSense shows all available interfaces
 
 // TypeScript knows all methods for each interface
@@ -172,7 +106,7 @@ steam.ISteamNews.GetNewsForApp_v2({
 
 ## License
 
-MIT
+ISC
 
 ## Contributing
 

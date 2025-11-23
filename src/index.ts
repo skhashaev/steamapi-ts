@@ -1,3 +1,1 @@
-export * from './generated.js';
-export * from './fetch-api.js';
-export * from './client.js';
+export { createSteamClient, type SteamClient } from './client.js';
