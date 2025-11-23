@@ -16,6 +16,7 @@ tsconfig.json
 .env
 .env.*
 !.env.example
+docs/
 
 # IDE
 .vscode/
