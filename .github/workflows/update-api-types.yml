@@ -6,12 +6,12 @@ on:
     - cron: '0 0 * * *'
   workflow_dispatch: # Allow manual trigger
 
+env:
+  API_KEY: ${{ secrets.STEAM_API_KEY }}
+
 jobs:
   update-api-types:
     runs-on: ubuntu-latest
-
-    env:
-      API_KEY: ${{ secrets.STEAM_API_KEY }}
 
     steps:
       - name: Checkout repository
@@ -25,15 +25,6 @@ jobs:
 
       - name: Install dependencies
         run: npm ci
-
-      - name: Debug Env
-        run: |
-          echo "Checking API_KEY..."
-          if [ -z "$API_KEY" ]; then
-            echo "API_KEY is empty"
-          else
-            echo "API_KEY is set (length: ${#API_KEY})"
-          fi
 
       - name: Fetch latest Steam API definition
         run: npm run fetch-api
