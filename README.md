@@ -2,6 +2,12 @@
 
 A fully typed TypeScript client for the Steam Web API with automatic type generation from the official API definition.
 
+## Note
+
+This library is very young and not fully tested. By the idea and the implementation, it should work properly, but bear in mind that it may not work as expected right away. If you find any issues, please open an issue on the GitHub repository. If you find any open issues, resolve them :)
+
+The library is a side project from the main one - we were in need some simple **typed** Steam API client, and I personally wanted to be able to call methods easily without copypasting the url string into some utility get() or post() functions. The changes to this library will be happening by the requests of the main project.
+
 ## Features
 
 - 🔒 **Fully Typed** - All API methods and parameters are strongly typed
