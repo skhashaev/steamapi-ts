@@ -8,6 +8,7 @@
   "scripts": {
     "build": "tsc",
     "prepublishOnly": "npm run build",
+    "test": "tsx src/test.ts",
     "dev": "node --loader ts-node/esm src/index.ts",
     "generate-api-types": "tsx src/generate-api-types.ts",
     "fetch-api": "tsx src/fetch-api.ts",
