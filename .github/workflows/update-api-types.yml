@@ -1,0 +1,77 @@
+name: Update Steam API Types
+
+on:
+  schedule:
+    # Run daily at 00:00 UTC
+    - cron: '0 0 * * *'
+  workflow_dispatch: # Allow manual trigger
+
+jobs:
+  update-api-types:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Fetch latest Steam API definition
+        run: npm run fetch-api
+
+      - name: Check for changes in api-definition.json
+        id: check-changes
+        run: |
+          if git diff --quiet src/api-definition.json; then
+            echo "changed=false" >> $GITHUB_OUTPUT
+            echo "No changes detected in api-definition.json"
+          else
+            echo "changed=true" >> $GITHUB_OUTPUT
+            echo "Changes detected in api-definition.json"
+          fi
+
+      - name: Generate API types
+        if: steps.check-changes.outputs.changed == 'true'
+        run: npm run generate-api-types
+
+      - name: Build project
+        if: steps.check-changes.outputs.changed == 'true'
+        run: npm run build
+
+      - name: Create Pull Request
+        if: steps.check-changes.outputs.changed == 'true'
+        uses: peter-evans/create-pull-request@v6
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          commit-message: 'chore: update Steam API types'
+          title: 'Update Steam API Types'
+          body: |
+            ## Automated Steam API Update
+
+            This PR was automatically generated because changes were detected in the Steam Web API.
+
+            ### Changes
+            - Updated `src/api-definition.json` with latest API definition
+            - Regenerated TypeScript types in `src/generated.ts`
+            - Rebuilt the project
+
+            ### Review Checklist
+            - [ ] Review changes in `api-definition.json`
+            - [ ] Verify generated types in `src/generated.ts`
+            - [ ] Check that tests still pass
+            - [ ] Merge if everything looks good
+
+            ---
+            *This PR was created automatically by the Update Steam API Types workflow.*
+          branch: update-steam-api-types
+          delete-branch: true
+          labels: |
+            automated
+            dependencies

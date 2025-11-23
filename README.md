@@ -103,6 +103,16 @@ steam.ISteamNews.GetNewsForApp_v2({
 });
 ```
 
+## Automated API Updates
+
+This package includes an automated workflow that keeps Steam API types up to date:
+
+- **Daily checks** for Steam API changes
+- **Automatic PR creation** when updates are detected
+- **Type regeneration** and build verification
+
+See [`.github/AUTOMATED_UPDATES.md`](.github/AUTOMATED_UPDATES.md) for details.
+
 ## Notes
 
 - The `key` parameter is automatically excluded from method signatures since it's provided when creating the client
