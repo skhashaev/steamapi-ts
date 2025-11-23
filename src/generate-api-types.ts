@@ -52,6 +52,7 @@ function generateApiTypes() {
   const interfaceNames = new Set<string>();
   const paramTypeDefinitions = new Map<string, string>();
   const methodParamMapping = new Map<string, string>();
+  const methodInfoMapping = new Map<string, Map<string, string>>();
   const methodNamesPerInterface = new Map<string, string[]>();
 
   // --- 1. Iterate and Generate Parameter Types ---
@@ -63,11 +64,14 @@ function generateApiTypes() {
 
     for (const method of apiInterface.methods) {
       const methodName = method.name;
-      methodNames.push(`'${methodName}'`);
+      const methodVersion = Number(method.version ?? 1);
+      const methodIdentifier = `${methodName}_v${methodVersion}`;
+      methodNames.push(`'${methodIdentifier}'`);
 
-      const paramsTypeName = `${methodName}Params`;
+      const paramsTypeName = `${methodName}V${methodVersion}Params`;
       const paramsProps: string[] = [];
       const methodParameters = Array.isArray(method.parameters) ? method.parameters : [];
+      const httpMethod = (method.httpmethod ?? 'GET').toUpperCase();
 
       for (const param of methodParameters) {
         const tsType = toTsType(param.type);
@@ -88,7 +92,22 @@ function generateApiTypes() {
         `export type ${paramsTypeName} = ${paramsTypeBody};`,
       );
 
-      methodParamMapping.set(methodName, `  '${methodName}': ${paramsTypeName};`);
+      methodParamMapping.set(methodIdentifier, `  '${methodIdentifier}': ${paramsTypeName};`);
+      if (!methodInfoMapping.has(interfaceName)) {
+        methodInfoMapping.set(interfaceName, new Map<string, string>());
+      }
+
+      methodInfoMapping
+        .get(interfaceName)!
+        .set(
+          methodIdentifier,
+          `    '${methodIdentifier}': {` +
+            ` interface: '${interfaceName}';` +
+            ` name: '${methodName}';` +
+            ` version: ${methodVersion};` +
+            ` httpMethod: '${httpMethod}';` +
+            ' };',
+        );
     }
 
     methodNamesPerInterface.set(interfaceName, methodNames);
@@ -125,6 +144,17 @@ function generateApiTypes() {
     '/** Utility type to map method names to their generated parameter types */\n';
   generatedContent += 'export type MethodParamsMap = {\n';
   generatedContent += `${Array.from(methodParamMapping.values()).join('\n')}\n};\n`;
+
+  generatedContent += '\n';
+  generatedContent += '/** Metadata for each generated method identifier */\n';
+  generatedContent += 'export type MethodInfoMap = {\n';
+  generatedContent += Array.from(methodInfoMapping.entries())
+    .map(([iface, methods]) => {
+      const methodEntries = Array.from(methods.values()).join('\n');
+      return `  '${iface}': {\n${methodEntries}\n  };`;
+    })
+    .join('\n');
+  generatedContent += '\n};\n';
 
   // --- 3. Write Output ---
   fs.writeFileSync(OUTPUT_PATH, generatedContent);
