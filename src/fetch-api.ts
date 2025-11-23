@@ -1,13 +1,19 @@
 import { writeFile } from 'node:fs/promises';
+import 'dotenv/config';
+
+const apiKey = process.env.API_KEY;
 
 async function main() {
   console.log('Fetching Steam API definition...');
 
-  // Note: GetSupportedAPIList works WITHOUT an API key and returns a basic list
-  // When called WITH an API key, it may return 403 depending on key permissions
-  const response = await fetch(
-    'https://api.steampowered.com/ISteamWebAPIUtil/GetSupportedAPIList/v1/',
-  );
+  if (!apiKey) {
+    throw new Error('API_KEY environment variable is required. Please set it in your .env file.');
+  }
+
+  // Using API key to get the full list of interfaces (~55 interfaces)
+  const url = `https://api.steampowered.com/ISteamWebAPIUtil/GetSupportedAPIList/v1/?key=${apiKey}`;
+
+  const response = await fetch(url);
 
   if (!response.ok) {
     throw new Error(`Failed to fetch API definition: ${response.status} ${response.statusText}`);
