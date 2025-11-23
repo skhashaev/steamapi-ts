@@ -5,6 +5,7 @@ const apiKey = process.env.API_KEY;
 
 async function main() {
   console.log('Fetching Steam API definition...');
+  console.log('API Key status:', apiKey ? `Present (length: ${apiKey.length})` : 'Missing');
 
   if (!apiKey) {
     throw new Error('API_KEY environment variable is required. Please set it in your .env file.');
