@@ -102,11 +102,11 @@ function generateApiTypes() {
         .set(
           methodIdentifier,
           `    '${methodIdentifier}': {` +
-            ` interface: '${interfaceName}';` +
-            ` name: '${methodName}';` +
-            ` version: ${methodVersion};` +
-            ` httpMethod: '${httpMethod}';` +
-            ' };',
+            ` interface: '${interfaceName}',` +
+            ` name: '${methodName}',` +
+            ` version: ${methodVersion},` +
+            ` httpMethod: '${httpMethod}'` +
+            ' },',
         );
     }
 
@@ -147,14 +147,15 @@ function generateApiTypes() {
 
   generatedContent += '\n';
   generatedContent += '/** Metadata for each generated method identifier */\n';
-  generatedContent += 'export type MethodInfoMap = {\n';
+  generatedContent += 'export const methodInfo = {\n';
   generatedContent += Array.from(methodInfoMapping.entries())
     .map(([iface, methods]) => {
       const methodEntries = Array.from(methods.values()).join('\n');
-      return `  '${iface}': {\n${methodEntries}\n  };`;
+      return `  '${iface}': {\n${methodEntries}\n  },`;
     })
     .join('\n');
-  generatedContent += '\n};\n';
+  generatedContent += '\n} as const;\n';
+  generatedContent += 'export type MethodInfoMap = typeof methodInfo;\n';
 
   // --- 3. Write Output ---
   fs.writeFileSync(OUTPUT_PATH, generatedContent);

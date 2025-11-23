@@ -381,124 +381,125 @@ export type MethodParamsMap = {
 };
 
 /** Metadata for each generated method identifier */
-export type MethodInfoMap = {
+export const methodInfo = {
   'IClientStats_1046930': {
-    'ReportEvent_v1': { interface: 'IClientStats_1046930'; name: 'ReportEvent'; version: 1; httpMethod: 'POST'; };
-  };
+    'ReportEvent_v1': { interface: 'IClientStats_1046930', name: 'ReportEvent', version: 1, httpMethod: 'POST' },
+  },
   'IGCVersion_1046930': {
-    'GetClientVersion_v1': { interface: 'IGCVersion_1046930'; name: 'GetClientVersion'; version: 1; httpMethod: 'GET'; };
-    'GetServerVersion_v1': { interface: 'IGCVersion_1046930'; name: 'GetServerVersion'; version: 1; httpMethod: 'GET'; };
-  };
+    'GetClientVersion_v1': { interface: 'IGCVersion_1046930', name: 'GetClientVersion', version: 1, httpMethod: 'GET' },
+    'GetServerVersion_v1': { interface: 'IGCVersion_1046930', name: 'GetServerVersion', version: 1, httpMethod: 'GET' },
+  },
   'IGCVersion_1269260': {
-    'GetClientVersion_v1': { interface: 'IGCVersion_1269260'; name: 'GetClientVersion'; version: 1; httpMethod: 'GET'; };
-    'GetServerVersion_v1': { interface: 'IGCVersion_1269260'; name: 'GetServerVersion'; version: 1; httpMethod: 'GET'; };
-  };
+    'GetClientVersion_v1': { interface: 'IGCVersion_1269260', name: 'GetClientVersion', version: 1, httpMethod: 'GET' },
+    'GetServerVersion_v1': { interface: 'IGCVersion_1269260', name: 'GetServerVersion', version: 1, httpMethod: 'GET' },
+  },
   'IGCVersion_1422450': {
-    'GetClientVersion_v1': { interface: 'IGCVersion_1422450'; name: 'GetClientVersion'; version: 1; httpMethod: 'GET'; };
-    'GetServerVersion_v1': { interface: 'IGCVersion_1422450'; name: 'GetServerVersion'; version: 1; httpMethod: 'GET'; };
-  };
+    'GetClientVersion_v1': { interface: 'IGCVersion_1422450', name: 'GetClientVersion', version: 1, httpMethod: 'GET' },
+    'GetServerVersion_v1': { interface: 'IGCVersion_1422450', name: 'GetServerVersion', version: 1, httpMethod: 'GET' },
+  },
   'IGCVersion_440': {
-    'GetClientVersion_v1': { interface: 'IGCVersion_440'; name: 'GetClientVersion'; version: 1; httpMethod: 'GET'; };
-    'GetServerVersion_v1': { interface: 'IGCVersion_440'; name: 'GetServerVersion'; version: 1; httpMethod: 'GET'; };
-  };
+    'GetClientVersion_v1': { interface: 'IGCVersion_440', name: 'GetClientVersion', version: 1, httpMethod: 'GET' },
+    'GetServerVersion_v1': { interface: 'IGCVersion_440', name: 'GetServerVersion', version: 1, httpMethod: 'GET' },
+  },
   'IGCVersion_570': {
-    'GetClientVersion_v1': { interface: 'IGCVersion_570'; name: 'GetClientVersion'; version: 1; httpMethod: 'GET'; };
-    'GetServerVersion_v1': { interface: 'IGCVersion_570'; name: 'GetServerVersion'; version: 1; httpMethod: 'GET'; };
-  };
+    'GetClientVersion_v1': { interface: 'IGCVersion_570', name: 'GetClientVersion', version: 1, httpMethod: 'GET' },
+    'GetServerVersion_v1': { interface: 'IGCVersion_570', name: 'GetServerVersion', version: 1, httpMethod: 'GET' },
+  },
   'IGCVersion_583950': {
-    'GetClientVersion_v1': { interface: 'IGCVersion_583950'; name: 'GetClientVersion'; version: 1; httpMethod: 'GET'; };
-    'GetServerVersion_v1': { interface: 'IGCVersion_583950'; name: 'GetServerVersion'; version: 1; httpMethod: 'GET'; };
-  };
+    'GetClientVersion_v1': { interface: 'IGCVersion_583950', name: 'GetClientVersion', version: 1, httpMethod: 'GET' },
+    'GetServerVersion_v1': { interface: 'IGCVersion_583950', name: 'GetServerVersion', version: 1, httpMethod: 'GET' },
+  },
   'IGCVersion_730': {
-    'GetServerVersion_v1': { interface: 'IGCVersion_730'; name: 'GetServerVersion'; version: 1; httpMethod: 'GET'; };
-  };
+    'GetServerVersion_v1': { interface: 'IGCVersion_730', name: 'GetServerVersion', version: 1, httpMethod: 'GET' },
+  },
   'IPortal2Leaderboards_620': {
-    'GetBucketizedData_v1': { interface: 'IPortal2Leaderboards_620'; name: 'GetBucketizedData'; version: 1; httpMethod: 'GET'; };
-  };
+    'GetBucketizedData_v1': { interface: 'IPortal2Leaderboards_620', name: 'GetBucketizedData', version: 1, httpMethod: 'GET' },
+  },
   'ISteamApps': {
-    'GetAppList_v1': { interface: 'ISteamApps'; name: 'GetAppList'; version: 1; httpMethod: 'GET'; };
-    'GetAppList_v2': { interface: 'ISteamApps'; name: 'GetAppList'; version: 2; httpMethod: 'GET'; };
-    'GetSDRConfig_v1': { interface: 'ISteamApps'; name: 'GetSDRConfig'; version: 1; httpMethod: 'GET'; };
-    'GetServersAtAddress_v1': { interface: 'ISteamApps'; name: 'GetServersAtAddress'; version: 1; httpMethod: 'GET'; };
-    'UpToDateCheck_v1': { interface: 'ISteamApps'; name: 'UpToDateCheck'; version: 1; httpMethod: 'GET'; };
-  };
+    'GetAppList_v1': { interface: 'ISteamApps', name: 'GetAppList', version: 1, httpMethod: 'GET' },
+    'GetAppList_v2': { interface: 'ISteamApps', name: 'GetAppList', version: 2, httpMethod: 'GET' },
+    'GetSDRConfig_v1': { interface: 'ISteamApps', name: 'GetSDRConfig', version: 1, httpMethod: 'GET' },
+    'GetServersAtAddress_v1': { interface: 'ISteamApps', name: 'GetServersAtAddress', version: 1, httpMethod: 'GET' },
+    'UpToDateCheck_v1': { interface: 'ISteamApps', name: 'UpToDateCheck', version: 1, httpMethod: 'GET' },
+  },
   'ISteamBroadcast': {
-    'PlayerStats_v1': { interface: 'ISteamBroadcast'; name: 'PlayerStats'; version: 1; httpMethod: 'POST'; };
-    'ViewerHeartbeat_v1': { interface: 'ISteamBroadcast'; name: 'ViewerHeartbeat'; version: 1; httpMethod: 'GET'; };
-  };
+    'PlayerStats_v1': { interface: 'ISteamBroadcast', name: 'PlayerStats', version: 1, httpMethod: 'POST' },
+    'ViewerHeartbeat_v1': { interface: 'ISteamBroadcast', name: 'ViewerHeartbeat', version: 1, httpMethod: 'GET' },
+  },
   'ISteamDirectory': {
-    'GetCMList_v1': { interface: 'ISteamDirectory'; name: 'GetCMList'; version: 1; httpMethod: 'GET'; };
-    'GetCMListForConnect_v1': { interface: 'ISteamDirectory'; name: 'GetCMListForConnect'; version: 1; httpMethod: 'GET'; };
-    'GetSteamPipeDomains_v1': { interface: 'ISteamDirectory'; name: 'GetSteamPipeDomains'; version: 1; httpMethod: 'GET'; };
-  };
+    'GetCMList_v1': { interface: 'ISteamDirectory', name: 'GetCMList', version: 1, httpMethod: 'GET' },
+    'GetCMListForConnect_v1': { interface: 'ISteamDirectory', name: 'GetCMListForConnect', version: 1, httpMethod: 'GET' },
+    'GetSteamPipeDomains_v1': { interface: 'ISteamDirectory', name: 'GetSteamPipeDomains', version: 1, httpMethod: 'GET' },
+  },
   'ISteamNews': {
-    'GetNewsForApp_v1': { interface: 'ISteamNews'; name: 'GetNewsForApp'; version: 1; httpMethod: 'GET'; };
-    'GetNewsForApp_v2': { interface: 'ISteamNews'; name: 'GetNewsForApp'; version: 2; httpMethod: 'GET'; };
-  };
+    'GetNewsForApp_v1': { interface: 'ISteamNews', name: 'GetNewsForApp', version: 1, httpMethod: 'GET' },
+    'GetNewsForApp_v2': { interface: 'ISteamNews', name: 'GetNewsForApp', version: 2, httpMethod: 'GET' },
+  },
   'ISteamRemoteStorage': {
-    'GetCollectionDetails_v1': { interface: 'ISteamRemoteStorage'; name: 'GetCollectionDetails'; version: 1; httpMethod: 'POST'; };
-    'GetPublishedFileDetails_v1': { interface: 'ISteamRemoteStorage'; name: 'GetPublishedFileDetails'; version: 1; httpMethod: 'POST'; };
-  };
+    'GetCollectionDetails_v1': { interface: 'ISteamRemoteStorage', name: 'GetCollectionDetails', version: 1, httpMethod: 'POST' },
+    'GetPublishedFileDetails_v1': { interface: 'ISteamRemoteStorage', name: 'GetPublishedFileDetails', version: 1, httpMethod: 'POST' },
+  },
   'ISteamUserOAuth': {
-    'GetTokenDetails_v1': { interface: 'ISteamUserOAuth'; name: 'GetTokenDetails'; version: 1; httpMethod: 'GET'; };
-  };
+    'GetTokenDetails_v1': { interface: 'ISteamUserOAuth', name: 'GetTokenDetails', version: 1, httpMethod: 'GET' },
+  },
   'ISteamUserStats': {
-    'GetGlobalAchievementPercentagesForApp_v1': { interface: 'ISteamUserStats'; name: 'GetGlobalAchievementPercentagesForApp'; version: 1; httpMethod: 'GET'; };
-    'GetGlobalAchievementPercentagesForApp_v2': { interface: 'ISteamUserStats'; name: 'GetGlobalAchievementPercentagesForApp'; version: 2; httpMethod: 'GET'; };
-    'GetGlobalStatsForGame_v1': { interface: 'ISteamUserStats'; name: 'GetGlobalStatsForGame'; version: 1; httpMethod: 'GET'; };
-    'GetNumberOfCurrentPlayers_v1': { interface: 'ISteamUserStats'; name: 'GetNumberOfCurrentPlayers'; version: 1; httpMethod: 'GET'; };
-  };
+    'GetGlobalAchievementPercentagesForApp_v1': { interface: 'ISteamUserStats', name: 'GetGlobalAchievementPercentagesForApp', version: 1, httpMethod: 'GET' },
+    'GetGlobalAchievementPercentagesForApp_v2': { interface: 'ISteamUserStats', name: 'GetGlobalAchievementPercentagesForApp', version: 2, httpMethod: 'GET' },
+    'GetGlobalStatsForGame_v1': { interface: 'ISteamUserStats', name: 'GetGlobalStatsForGame', version: 1, httpMethod: 'GET' },
+    'GetNumberOfCurrentPlayers_v1': { interface: 'ISteamUserStats', name: 'GetNumberOfCurrentPlayers', version: 1, httpMethod: 'GET' },
+  },
   'ISteamWebAPIUtil': {
-    'GetServerInfo_v1': { interface: 'ISteamWebAPIUtil'; name: 'GetServerInfo'; version: 1; httpMethod: 'GET'; };
-    'GetSupportedAPIList_v1': { interface: 'ISteamWebAPIUtil'; name: 'GetSupportedAPIList'; version: 1; httpMethod: 'GET'; };
-  };
+    'GetServerInfo_v1': { interface: 'ISteamWebAPIUtil', name: 'GetServerInfo', version: 1, httpMethod: 'GET' },
+    'GetSupportedAPIList_v1': { interface: 'ISteamWebAPIUtil', name: 'GetSupportedAPIList', version: 1, httpMethod: 'GET' },
+  },
   'ITFSystem_440': {
-    'GetWorldStatus_v1': { interface: 'ITFSystem_440'; name: 'GetWorldStatus'; version: 1; httpMethod: 'GET'; };
-  };
+    'GetWorldStatus_v1': { interface: 'ITFSystem_440', name: 'GetWorldStatus', version: 1, httpMethod: 'GET' },
+  },
   'IAuthenticationService': {
-    'PollAuthSessionStatus_v1': { interface: 'IAuthenticationService'; name: 'PollAuthSessionStatus'; version: 1; httpMethod: 'POST'; };
-    'GetAuthSessionInfo_v1': { interface: 'IAuthenticationService'; name: 'GetAuthSessionInfo'; version: 1; httpMethod: 'POST'; };
-    'GetAuthSessionRiskInfo_v1': { interface: 'IAuthenticationService'; name: 'GetAuthSessionRiskInfo'; version: 1; httpMethod: 'POST'; };
-    'NotifyRiskQuizResults_v1': { interface: 'IAuthenticationService'; name: 'NotifyRiskQuizResults'; version: 1; httpMethod: 'POST'; };
-    'GetPasswordRSAPublicKey_v1': { interface: 'IAuthenticationService'; name: 'GetPasswordRSAPublicKey'; version: 1; httpMethod: 'GET'; };
-    'BeginAuthSessionViaCredentials_v1': { interface: 'IAuthenticationService'; name: 'BeginAuthSessionViaCredentials'; version: 1; httpMethod: 'POST'; };
-    'UpdateAuthSessionWithSteamGuardCode_v1': { interface: 'IAuthenticationService'; name: 'UpdateAuthSessionWithSteamGuardCode'; version: 1; httpMethod: 'POST'; };
-    'BeginAuthSessionViaQR_v1': { interface: 'IAuthenticationService'; name: 'BeginAuthSessionViaQR'; version: 1; httpMethod: 'POST'; };
-    'UpdateAuthSessionWithMobileConfirmation_v1': { interface: 'IAuthenticationService'; name: 'UpdateAuthSessionWithMobileConfirmation'; version: 1; httpMethod: 'POST'; };
-  };
+    'PollAuthSessionStatus_v1': { interface: 'IAuthenticationService', name: 'PollAuthSessionStatus', version: 1, httpMethod: 'POST' },
+    'GetAuthSessionInfo_v1': { interface: 'IAuthenticationService', name: 'GetAuthSessionInfo', version: 1, httpMethod: 'POST' },
+    'GetAuthSessionRiskInfo_v1': { interface: 'IAuthenticationService', name: 'GetAuthSessionRiskInfo', version: 1, httpMethod: 'POST' },
+    'NotifyRiskQuizResults_v1': { interface: 'IAuthenticationService', name: 'NotifyRiskQuizResults', version: 1, httpMethod: 'POST' },
+    'GetPasswordRSAPublicKey_v1': { interface: 'IAuthenticationService', name: 'GetPasswordRSAPublicKey', version: 1, httpMethod: 'GET' },
+    'BeginAuthSessionViaCredentials_v1': { interface: 'IAuthenticationService', name: 'BeginAuthSessionViaCredentials', version: 1, httpMethod: 'POST' },
+    'UpdateAuthSessionWithSteamGuardCode_v1': { interface: 'IAuthenticationService', name: 'UpdateAuthSessionWithSteamGuardCode', version: 1, httpMethod: 'POST' },
+    'BeginAuthSessionViaQR_v1': { interface: 'IAuthenticationService', name: 'BeginAuthSessionViaQR', version: 1, httpMethod: 'POST' },
+    'UpdateAuthSessionWithMobileConfirmation_v1': { interface: 'IAuthenticationService', name: 'UpdateAuthSessionWithMobileConfirmation', version: 1, httpMethod: 'POST' },
+  },
   'IBroadcastService': {
-    'PostGameDataFrameRTMP_v1': { interface: 'IBroadcastService'; name: 'PostGameDataFrameRTMP'; version: 1; httpMethod: 'POST'; };
-  };
+    'PostGameDataFrameRTMP_v1': { interface: 'IBroadcastService', name: 'PostGameDataFrameRTMP', version: 1, httpMethod: 'POST' },
+  },
   'IContentServerDirectoryService': {
-    'GetCDNForVideo_v1': { interface: 'IContentServerDirectoryService'; name: 'GetCDNForVideo'; version: 1; httpMethod: 'GET'; };
-    'PickSingleContentServer_v1': { interface: 'IContentServerDirectoryService'; name: 'PickSingleContentServer'; version: 1; httpMethod: 'GET'; };
-    'GetServersForSteamPipe_v1': { interface: 'IContentServerDirectoryService'; name: 'GetServersForSteamPipe'; version: 1; httpMethod: 'GET'; };
-    'GetClientUpdateHosts_v1': { interface: 'IContentServerDirectoryService'; name: 'GetClientUpdateHosts'; version: 1; httpMethod: 'GET'; };
-    'GetDepotPatchInfo_v1': { interface: 'IContentServerDirectoryService'; name: 'GetDepotPatchInfo'; version: 1; httpMethod: 'GET'; };
-  };
+    'GetCDNForVideo_v1': { interface: 'IContentServerDirectoryService', name: 'GetCDNForVideo', version: 1, httpMethod: 'GET' },
+    'PickSingleContentServer_v1': { interface: 'IContentServerDirectoryService', name: 'PickSingleContentServer', version: 1, httpMethod: 'GET' },
+    'GetServersForSteamPipe_v1': { interface: 'IContentServerDirectoryService', name: 'GetServersForSteamPipe', version: 1, httpMethod: 'GET' },
+    'GetClientUpdateHosts_v1': { interface: 'IContentServerDirectoryService', name: 'GetClientUpdateHosts', version: 1, httpMethod: 'GET' },
+    'GetDepotPatchInfo_v1': { interface: 'IContentServerDirectoryService', name: 'GetDepotPatchInfo', version: 1, httpMethod: 'GET' },
+  },
   'IPublishedFileService': {
-    'GetUserVoteSummary_v1': { interface: 'IPublishedFileService'; name: 'GetUserVoteSummary'; version: 1; httpMethod: 'GET'; };
-  };
+    'GetUserVoteSummary_v1': { interface: 'IPublishedFileService', name: 'GetUserVoteSummary', version: 1, httpMethod: 'GET' },
+  },
   'IPlayerService': {
-    'RecordOfflinePlaytime_v1': { interface: 'IPlayerService'; name: 'RecordOfflinePlaytime'; version: 1; httpMethod: 'POST'; };
-  };
+    'RecordOfflinePlaytime_v1': { interface: 'IPlayerService', name: 'RecordOfflinePlaytime', version: 1, httpMethod: 'POST' },
+  },
   'IGameNotificationsService': {
-    'UserCreateSession_v1': { interface: 'IGameNotificationsService'; name: 'UserCreateSession'; version: 1; httpMethod: 'POST'; };
-    'UserUpdateSession_v1': { interface: 'IGameNotificationsService'; name: 'UserUpdateSession'; version: 1; httpMethod: 'POST'; };
-    'UserDeleteSession_v1': { interface: 'IGameNotificationsService'; name: 'UserDeleteSession'; version: 1; httpMethod: 'POST'; };
-  };
+    'UserCreateSession_v1': { interface: 'IGameNotificationsService', name: 'UserCreateSession', version: 1, httpMethod: 'POST' },
+    'UserUpdateSession_v1': { interface: 'IGameNotificationsService', name: 'UserUpdateSession', version: 1, httpMethod: 'POST' },
+    'UserDeleteSession_v1': { interface: 'IGameNotificationsService', name: 'UserDeleteSession', version: 1, httpMethod: 'POST' },
+  },
   'IWishlistService': {
-    'GetWishlistSortedFiltered_v1': { interface: 'IWishlistService'; name: 'GetWishlistSortedFiltered'; version: 1; httpMethod: 'GET'; };
-    'GetWishlist_v1': { interface: 'IWishlistService'; name: 'GetWishlist'; version: 1; httpMethod: 'GET'; };
-    'GetWishlistItemCount_v1': { interface: 'IWishlistService'; name: 'GetWishlistItemCount'; version: 1; httpMethod: 'GET'; };
-  };
+    'GetWishlistSortedFiltered_v1': { interface: 'IWishlistService', name: 'GetWishlistSortedFiltered', version: 1, httpMethod: 'GET' },
+    'GetWishlist_v1': { interface: 'IWishlistService', name: 'GetWishlist', version: 1, httpMethod: 'GET' },
+    'GetWishlistItemCount_v1': { interface: 'IWishlistService', name: 'GetWishlistItemCount', version: 1, httpMethod: 'GET' },
+  },
   'IStoreService': {
-    'GetGamesFollowed_v1': { interface: 'IStoreService'; name: 'GetGamesFollowed'; version: 1; httpMethod: 'GET'; };
-    'GetGamesFollowedCount_v1': { interface: 'IStoreService'; name: 'GetGamesFollowedCount'; version: 1; httpMethod: 'GET'; };
-    'GetRecommendedTagsForUser_v1': { interface: 'IStoreService'; name: 'GetRecommendedTagsForUser'; version: 1; httpMethod: 'GET'; };
-  };
+    'GetGamesFollowed_v1': { interface: 'IStoreService', name: 'GetGamesFollowed', version: 1, httpMethod: 'GET' },
+    'GetGamesFollowedCount_v1': { interface: 'IStoreService', name: 'GetGamesFollowedCount', version: 1, httpMethod: 'GET' },
+    'GetRecommendedTagsForUser_v1': { interface: 'IStoreService', name: 'GetRecommendedTagsForUser', version: 1, httpMethod: 'GET' },
+  },
   'IHelpRequestLogsService': {
-    'UploadUserApplicationLog_v1': { interface: 'IHelpRequestLogsService'; name: 'UploadUserApplicationLog'; version: 1; httpMethod: 'POST'; };
-    'GetApplicationLogDemand_v1': { interface: 'IHelpRequestLogsService'; name: 'GetApplicationLogDemand'; version: 1; httpMethod: 'POST'; };
-  };
-};
+    'UploadUserApplicationLog_v1': { interface: 'IHelpRequestLogsService', name: 'UploadUserApplicationLog', version: 1, httpMethod: 'POST' },
+    'GetApplicationLogDemand_v1': { interface: 'IHelpRequestLogsService', name: 'GetApplicationLogDemand', version: 1, httpMethod: 'POST' },
+  },
+} as const;
+export type MethodInfoMap = typeof methodInfo;
