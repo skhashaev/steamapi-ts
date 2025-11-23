@@ -1,24 +1,21 @@
 {
   "name": "steamapi",
   "version": "0.0.1",
-  "description": "JS API for SteamAPI",
+  "description": "Steam API powered by TypeScript",
   "type": "module",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "scripts": {
     "dev": "node --loader ts-node/esm src/index.ts",
-    "build": "tsc",
-    "start": "node dist/index.js",
-    "test": "echo \"Error: no test specified\" && exit 1",
     "generate-api-types": "tsx src/generate-api-types.ts",
-    "test:console": "tsx src/console-test.ts",
     "fetch-api": "tsx src/fetch-api.ts",
     "format": "prettier --write .",
     "format:check": "prettier --check ."
   },
   "keywords": [
     "steam",
-    "api"
+    "api",
+    "typescript"
   ],
   "author": "Shamil Khashaev",
   "license": "ISC",
@@ -30,7 +27,6 @@
     "typescript": "^5.9.3"
   },
   "dependencies": {
-    "axios": "^1.12.2",
     "dotenv": "^17.2.3"
   }
 }
