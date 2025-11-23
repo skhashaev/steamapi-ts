@@ -1,5 +1,3 @@
-// generate-api-types.ts
-
 import * as fs from 'fs';
 import * as path from 'path';
 type ApiDefinition = typeof import('./api-definition.json');
@@ -25,8 +23,8 @@ const toTsType = (apiType: string): string => {
       return 'number';
     case 'bool':
       return 'boolean';
-
     case 'uint64':
+      return 'bigint';
     case 'uint32':
       return 'number';
     default:

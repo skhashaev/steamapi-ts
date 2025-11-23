@@ -4,7 +4,7 @@
 export type ReportEventV1Params = Record<string, never>;
 
 export type GetNextMatchSharingCodeV1Params = {
-  steamid: number;
+  steamid: bigint;
   steamidkey: string;
   knowncode: string;
 };
@@ -19,13 +19,13 @@ export type GetGameServersStatusV1Params = Record<string, never>;
 
 export type GetTournamentFantasyLineupV1Params = {
   event: number;
-  steamid: number;
+  steamid: bigint;
   steamidkey: string;
 };
 
 export type GetTournamentItemsV1Params = {
   event: number;
-  steamid: number;
+  steamid: bigint;
   steamidkey: string;
 };
 
@@ -35,50 +35,50 @@ export type GetTournamentLayoutV1Params = {
 
 export type GetTournamentPredictionsV1Params = {
   event: number;
-  steamid: number;
+  steamid: bigint;
   steamidkey: string;
 };
 
 export type UploadTournamentFantasyLineupV1Params = {
   event: number;
-  steamid: number;
+  steamid: bigint;
   steamidkey: string;
   sectionid: number;
   pickid0: number;
-  itemid0: number;
+  itemid0: bigint;
   pickid1: number;
-  itemid1: number;
+  itemid1: bigint;
   pickid2: number;
-  itemid2: number;
+  itemid2: bigint;
   pickid3: number;
-  itemid3: number;
+  itemid3: bigint;
   pickid4: number;
-  itemid4: number;
+  itemid4: bigint;
 };
 
 export type UploadTournamentPredictionsV1Params = {
   event: number;
-  steamid: number;
+  steamid: bigint;
   steamidkey: string;
   sectionid: number;
   groupid: number;
   index: number;
   pickid: number;
-  itemid: number;
+  itemid: bigint;
 };
 
 export type GetRealtimeStatsV1Params = {
-  server_steam_id: number;
+  server_steam_id: bigint;
 };
 
 export type GetLiveLeagueGamesV1Params = {
   league_id?: number | undefined;
-  match_id?: number | undefined;
+  match_id?: bigint | undefined;
   dpc?: boolean | undefined;
 };
 
 export type GetMatchDetailsV1Params = {
-  match_id: number;
+  match_id: bigint;
   include_persona_names?: boolean | undefined;
 };
 
@@ -89,17 +89,17 @@ export type GetMatchHistoryV1Params = {
   min_players?: string | undefined;
   account_id?: string | undefined;
   league_id?: string | undefined;
-  start_at_match_id?: number | undefined;
+  start_at_match_id?: bigint | undefined;
   matches_requested?: string | undefined;
 };
 
 export type GetMatchHistoryBySequenceNumV1Params = {
-  start_at_match_seq_num?: number | undefined;
+  start_at_match_seq_num?: bigint | undefined;
   matches_requested?: number | undefined;
 };
 
 export type GetTeamInfoByTeamIDV1Params = {
-  start_at_team_id?: number | undefined;
+  start_at_team_id?: bigint | undefined;
   teams_requested?: number | undefined;
 };
 
@@ -121,7 +121,7 @@ export type GetTournamentPlayerStatsV1Params = {
   league_id?: string | undefined;
   hero_id?: string | undefined;
   time_frame?: string | undefined;
-  match_id?: number | undefined;
+  match_id?: bigint | undefined;
 };
 
 export type GetTournamentPlayerStatsV2Params = {
@@ -129,12 +129,12 @@ export type GetTournamentPlayerStatsV2Params = {
   league_id?: string | undefined;
   hero_id?: string | undefined;
   time_frame?: string | undefined;
-  match_id?: number | undefined;
+  match_id?: bigint | undefined;
   phase_id?: number | undefined;
 };
 
 export type GetBroadcasterInfoV1Params = {
-  broadcaster_steam_id: number;
+  broadcaster_steam_id: bigint;
   league_id?: number | undefined;
 };
 
@@ -143,12 +143,12 @@ export type GetSteamIDForBadgeIDV1Params = {
 };
 
 export type SetSteamAccountPurchasedV1Params = {
-  steamid: number;
+  steamid: bigint;
   BadgeType: number;
 };
 
 export type SteamAccountValidForBadgeTypeV1Params = {
-  steamid: number;
+  steamid: bigint;
   ValidBadgeType1: number;
   ValidBadgeType2: number;
   ValidBadgeType3: number;
@@ -183,11 +183,11 @@ export type GetTournamentPrizePoolV1Params = {
 };
 
 export type GetPlayerItemsV1Params = {
-  steamid: number;
+  steamid: bigint;
 };
 
 export type GetEquippedPlayerItemsV1Params = {
-  steamid: number;
+  steamid: bigint;
   class_id: number;
 };
 
@@ -242,9 +242,9 @@ export type UpToDateCheckV1Params = {
 export type PlayerStatsV1Params = Record<string, never>;
 
 export type ViewerHeartbeatV1Params = {
-  steamid: number;
-  sessionid: number;
-  token: number;
+  steamid: bigint;
+  sessionid: bigint;
+  token: bigint;
   stream?: any | undefined;
 };
 
@@ -282,8 +282,8 @@ export type GetAssetClassInfoV1Params = {
   appid: number;
   language?: string | undefined;
   class_count: number;
-  classid0: number;
-  instanceid0?: number | undefined;
+  classid0: bigint;
+  instanceid0?: bigint | undefined;
 };
 
 export type GetAssetPricesV1Params = {
@@ -311,22 +311,22 @@ export type GetNewsForAppV2Params = {
 
 export type GetCollectionDetailsV1Params = {
   collectioncount: number;
-  'publishedfileids[0]': number;
+  'publishedfileids[0]': bigint;
 };
 
 export type GetPublishedFileDetailsV1Params = {
   itemcount: number;
-  'publishedfileids[0]': number;
+  'publishedfileids[0]': bigint;
 };
 
 export type GetUGCFileDetailsV1Params = {
-  steamid?: number | undefined;
-  ugcid: number;
+  steamid?: bigint | undefined;
+  ugcid: bigint;
   appid: number;
 };
 
 export type GetFriendListV1Params = {
-  steamid: number;
+  steamid: bigint;
   relationship?: string | undefined;
 };
 
@@ -343,7 +343,7 @@ export type GetPlayerSummariesV2Params = {
 };
 
 export type GetUserGroupListV1Params = {
-  steamid: number;
+  steamid: bigint;
 };
 
 export type ResolveVanityURLV1Params = {
@@ -361,11 +361,11 @@ export type GetTokenDetailsV1Params = {
 };
 
 export type GetGlobalAchievementPercentagesForAppV1Params = {
-  gameid: number;
+  gameid: bigint;
 };
 
 export type GetGlobalAchievementPercentagesForAppV2Params = {
-  gameid: number;
+  gameid: bigint;
 };
 
 export type GetGlobalStatsForGameV1Params = {
@@ -381,7 +381,7 @@ export type GetNumberOfCurrentPlayersV1Params = {
 };
 
 export type GetPlayerAchievementsV1Params = {
-  steamid: number;
+  steamid: bigint;
   appid: number;
   l?: string | undefined;
 };
@@ -397,12 +397,12 @@ export type GetSchemaForGameV2Params = {
 };
 
 export type GetUserStatsForGameV1Params = {
-  steamid: number;
+  steamid: bigint;
   appid: number;
 };
 
 export type GetUserStatsForGameV2Params = {
-  steamid: number;
+  steamid: bigint;
   appid: number;
 };
 
@@ -415,12 +415,12 @@ export type GetGoldenWrenchesV1Params = Record<string, never>;
 export type GetGoldenWrenchesV2Params = Record<string, never>;
 
 export type GetItemIDV1Params = {
-  steamid: number;
+  steamid: bigint;
   PromoID: number;
 };
 
 export type GrantItemV1Params = {
-  steamid: number;
+  steamid: bigint;
   PromoID: number;
 };
 
@@ -434,20 +434,20 @@ export type CreateAccountV1Params = {
 };
 
 export type SetMemoV1Params = {
-  steamid: number;
+  steamid: bigint;
   memo: string;
 };
 
 export type ResetLoginTokenV1Params = {
-  steamid: number;
+  steamid: bigint;
 };
 
 export type DeleteAccountV1Params = {
-  steamid: number;
+  steamid: bigint;
 };
 
 export type GetAccountPublicInfoV1Params = {
-  steamid: number;
+  steamid: bigint;
 };
 
 export type QueryLoginTokenV1Params = {
@@ -459,7 +459,7 @@ export type GetServerSteamIDsByIPV1Params = {
 };
 
 export type GetServerIPsBySteamIDV1Params = {
-  server_steamids: number;
+  server_steamids: bigint;
 };
 
 export type QueryByFakeIPV1Params = {
@@ -470,23 +470,23 @@ export type QueryByFakeIPV1Params = {
 };
 
 export type IsPlayingSharedGameV1Params = {
-  steamid: number;
+  steamid: bigint;
   appid_playing: number;
 };
 
 export type RecordOfflinePlaytimeV1Params = {
-  steamid: number;
+  steamid: bigint;
   ticket: string;
   play_sessions: any;
 };
 
 export type GetRecentlyPlayedGamesV1Params = {
-  steamid: number;
+  steamid: bigint;
   count: number;
 };
 
 export type GetOwnedGamesV1Params = {
-  steamid: number;
+  steamid: bigint;
   include_appinfo: boolean;
   include_played_free_games: boolean;
   appids_filter: number;
@@ -497,35 +497,35 @@ export type GetOwnedGamesV1Params = {
 };
 
 export type GetSteamLevelV1Params = {
-  steamid: number;
+  steamid: bigint;
 };
 
 export type GetBadgesV1Params = {
-  steamid: number;
+  steamid: bigint;
 };
 
 export type GetCommunityBadgeProgressV1Params = {
-  steamid: number;
+  steamid: bigint;
   badgeid: any;
 };
 
 export type PollAuthSessionStatusV1Params = {
-  client_id: number;
+  client_id: bigint;
   request_id: string;
-  token_to_revoke: number;
+  token_to_revoke: bigint;
 };
 
 export type GetAuthSessionInfoV1Params = {
-  client_id: number;
+  client_id: bigint;
 };
 
 export type GetAuthSessionRiskInfoV1Params = {
-  client_id: number;
+  client_id: bigint;
   language: number;
 };
 
 export type NotifyRiskQuizResultsV1Params = {
-  client_id: number;
+  client_id: bigint;
   results: any;
   selected_action: string;
   did_confirm_login: boolean;
@@ -539,7 +539,7 @@ export type BeginAuthSessionViaCredentialsV1Params = {
   device_friendly_name: string;
   account_name: string;
   encrypted_password: string;
-  encryption_timestamp: number;
+  encryption_timestamp: bigint;
   remember_login: boolean;
   platform_type: any;
   persistence?: any | undefined;
@@ -551,8 +551,8 @@ export type BeginAuthSessionViaCredentialsV1Params = {
 };
 
 export type UpdateAuthSessionWithSteamGuardCodeV1Params = {
-  client_id: number;
-  steamid: number;
+  client_id: bigint;
+  steamid: bigint;
   code: string;
   code_type: any;
 };
@@ -566,8 +566,8 @@ export type BeginAuthSessionViaQRV1Params = {
 
 export type UpdateAuthSessionWithMobileConfirmationV1Params = {
   version: any;
-  client_id: number;
-  steamid: number;
+  client_id: bigint;
+  steamid: bigint;
   signature: string;
   confirm?: boolean | undefined;
   persistence?: any | undefined;
@@ -575,7 +575,7 @@ export type UpdateAuthSessionWithMobileConfirmationV1Params = {
 
 export type PostGameDataFrameRTMPV1Params = {
   appid: number;
-  steamid: number;
+  steamid: bigint;
   rtmp_token: string;
   frame_data: string;
 };
@@ -633,12 +633,12 @@ export type GetClientUpdateHostsV1Params = {
 export type GetDepotPatchInfoV1Params = {
   appid: number;
   depotid: number;
-  source_manifestid: number;
-  target_manifestid: number;
+  source_manifestid: bigint;
+  target_manifestid: bigint;
 };
 
 export type GetUserVoteSummaryV1Params = {
-  publishedfileids: number;
+  publishedfileids: bigint;
 };
 
 export type QueryFilesV1Params = {
@@ -655,7 +655,7 @@ export type QueryFilesV1Params = {
   omitted_flags: string;
   search_text: string;
   filetype: number;
-  child_publishedfileid: number;
+  child_publishedfileid: bigint;
   days: number;
   include_recent_votes_only: boolean;
   cache_max_age_seconds?: number | undefined;
@@ -684,14 +684,14 @@ export type QueryFilesV1Params = {
 };
 
 export type GetSubSectionDataV1Params = {
-  publishedfileid: number;
+  publishedfileid: bigint;
   for_table_of_contents: boolean;
-  specific_sectionid: number;
+  specific_sectionid: bigint;
   desired_revision?: any | undefined;
 };
 
 export type GetDetailsV1Params = {
-  publishedfileids: number;
+  publishedfileids: bigint;
   includetags: boolean;
   includeadditionalpreviews: boolean;
   includechildren: boolean;
@@ -710,7 +710,7 @@ export type GetDetailsV1Params = {
 };
 
 export type GetUserFilesV1Params = {
-  steamid: number;
+  steamid: bigint;
   appid: number;
   shortcutid: number;
   page?: number | undefined;
@@ -748,7 +748,7 @@ export type GetUserFilesV1Params = {
 };
 
 export type GetUserFileCountV1Params = {
-  steamid: number;
+  steamid: bigint;
   appid: number;
   shortcutid: number;
   page?: number | undefined;
@@ -788,7 +788,7 @@ export type GetUserFileCountV1Params = {
 export type GetTradeHistoryV1Params = {
   max_trades: number;
   start_after_time: number;
-  start_after_tradeid: number;
+  start_after_tradeid: bigint;
   navigating_back: boolean;
   get_descriptions: boolean;
   language: string;
@@ -797,7 +797,7 @@ export type GetTradeHistoryV1Params = {
 };
 
 export type GetTradeStatusV1Params = {
-  tradeid: number;
+  tradeid: bigint;
   get_descriptions: boolean;
   language: string;
 };
@@ -814,7 +814,7 @@ export type GetTradeOffersV1Params = {
 };
 
 export type GetTradeOfferV1Params = {
-  tradeofferid: number;
+  tradeofferid: bigint;
   language: string;
   get_descriptions: boolean;
 };
@@ -824,45 +824,45 @@ export type GetTradeOffersSummaryV1Params = {
 };
 
 export type GetTradeHoldDurationsV1Params = {
-  steamid_target: number;
+  steamid_target: bigint;
   trade_offer_access_token: string;
 };
 
 export type UserCreateSessionV1Params = {
   appid: number;
-  context: number;
+  context: bigint;
   title: any;
   users: any;
-  steamid: number;
+  steamid: bigint;
 };
 
 export type UserUpdateSessionV1Params = {
-  sessionid: number;
+  sessionid: bigint;
   appid: number;
   title: any;
   users: any;
-  steamid: number;
+  steamid: bigint;
 };
 
 export type UserDeleteSessionV1Params = {
-  sessionid: number;
+  sessionid: bigint;
   appid: number;
-  steamid: number;
+  steamid: bigint;
 };
 
 export type SplitItemStackV1Params = {
   appid: number;
-  itemid: number;
+  itemid: bigint;
   quantity: number;
-  steamid: number;
+  steamid: bigint;
 };
 
 export type CombineItemStacksV1Params = {
   appid: number;
-  fromitemid: number;
-  destitemid: number;
+  fromitemid: bigint;
+  destitemid: bigint;
   quantity: number;
-  steamid: number;
+  steamid: bigint;
 };
 
 export type GetPriceSheetV1Params = {
@@ -871,7 +871,7 @@ export type GetPriceSheetV1Params = {
 };
 
 export type GetWishlistSortedFilteredV1Params = {
-  steamid: number;
+  steamid: bigint;
   context: any;
   data_request: any;
   sort_order?: any | undefined;
@@ -881,19 +881,19 @@ export type GetWishlistSortedFilteredV1Params = {
 };
 
 export type GetWishlistV1Params = {
-  steamid: number;
+  steamid: bigint;
 };
 
 export type GetWishlistItemCountV1Params = {
-  steamid: number;
+  steamid: bigint;
 };
 
 export type GetGamesFollowedV1Params = {
-  steamid: number;
+  steamid: bigint;
 };
 
 export type GetGamesFollowedCountV1Params = {
-  steamid: number;
+  steamid: bigint;
 };
 
 export type GetAppListV1Params = {
@@ -919,7 +919,7 @@ export type UploadUserApplicationLogV1Params = {
   log_type: string;
   version_string: string;
   log_contents: string;
-  request_id: number;
+  request_id: bigint;
 };
 
 export type GetApplicationLogDemandV1Params = {
@@ -927,18 +927,18 @@ export type GetApplicationLogDemandV1Params = {
 };
 
 export type ReportCheatDataV1Params = {
-  steamid: number;
+  steamid: bigint;
   appid: number;
   pathandfilename: string;
   webcheaturl: string;
-  time_now: number;
-  time_started: number;
-  time_stopped: number;
+  time_now: bigint;
+  time_started: bigint;
+  time_stopped: bigint;
   cheatname: string;
   game_process_id: number;
   cheat_process_id: number;
-  cheat_param_1: number;
-  cheat_param_2: number;
+  cheat_param_1: bigint;
+  cheat_param_2: bigint;
   cheat_data_dump: string;
 };
 

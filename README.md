@@ -70,6 +70,31 @@ const news = await steam.ISteamNews.GetNewsForApp_v2({
 });
 ```
 
+### Working with BigInt Parameters
+
+Some Steam API parameters use 64-bit integers (like Steam IDs) that exceed JavaScript's safe integer range. For these parameters, you **must** use BigInt literals with the `n` suffix:
+
+```typescript
+// ✅ Correct - Using BigInt literal
+const friendList = await steam.ISteamUser.GetFriendList_v1({
+  steamid: 76561199699144174n, // Note the 'n' suffix
+});
+
+// ✅ Also correct - Converting from string
+const steamId = BigInt('76561199699144174');
+const friendList = await steam.ISteamUser.GetFriendList_v1({
+  steamid: steamId,
+});
+
+// ❌ Wrong - Number literal loses precision
+const friendList = await steam.ISteamUser.GetFriendList_v1({
+  steamid: 76561199699144174, // TypeScript error + precision loss!
+});
+```
+
+> [!IMPORTANT]
+> Steam IDs and other 64-bit integers **will lose precision** if you use regular number literals. Always use BigInt (`n` suffix) or convert from strings using `BigInt()`.
+
 ### Error Handling
 
 ```typescript
@@ -119,6 +144,7 @@ See [`.github/AUTOMATED_UPDATES.md`](.github/AUTOMATED_UPDATES.md) for details.
 - Methods are named with their version suffix (e.g., `GetAppList_v1`, `GetAppList_v2`)
 - The API definition returned by Steam may vary based on your API key's permissions
 - Some Steam API endpoints may return 404 errors depending on the method or your API key's access level
+- **BigInt parameters**: Parameters typed as `bigint` (like Steam IDs) must use BigInt literals (`76561199699144174n`) or be converted from strings (`BigInt('76561199699144174')`) to prevent precision loss
 
 ## License
 
