@@ -12,6 +12,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "generate-api-types": "tsx src/generate-api-types.ts",
     "test:console": "tsx src/console-test.ts",
+    "fetch-api": "tsx src/fetch-api.ts",
     "format": "prettier --write .",
     "format:check": "prettier --check ."
   },

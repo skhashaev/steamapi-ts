@@ -3,6 +3,221 @@
 
 export type ReportEventV1Params = Record<string, never>;
 
+export type GetNextMatchSharingCodeV1Params = {
+  steamid: number;
+  steamidkey: string;
+  knowncode: string;
+};
+
+export type GetGameMapsPlaytimeV1Params = {
+  interval: string;
+  gamemode: string;
+  mapgroup: string;
+};
+
+export type GetGameServersStatusV1Params = Record<string, never>;
+
+export type GetTournamentFantasyLineupV1Params = {
+  event: number;
+  steamid: number;
+  steamidkey: string;
+};
+
+export type GetTournamentItemsV1Params = {
+  event: number;
+  steamid: number;
+  steamidkey: string;
+};
+
+export type GetTournamentLayoutV1Params = {
+  event: number;
+};
+
+export type GetTournamentPredictionsV1Params = {
+  event: number;
+  steamid: number;
+  steamidkey: string;
+};
+
+export type UploadTournamentFantasyLineupV1Params = {
+  event: number;
+  steamid: number;
+  steamidkey: string;
+  sectionid: number;
+  pickid0: number;
+  itemid0: number;
+  pickid1: number;
+  itemid1: number;
+  pickid2: number;
+  itemid2: number;
+  pickid3: number;
+  itemid3: number;
+  pickid4: number;
+  itemid4: number;
+};
+
+export type UploadTournamentPredictionsV1Params = {
+  event: number;
+  steamid: number;
+  steamidkey: string;
+  sectionid: number;
+  groupid: number;
+  index: number;
+  pickid: number;
+  itemid: number;
+};
+
+export type GetRealtimeStatsV1Params = {
+  server_steam_id: number;
+};
+
+export type GetLiveLeagueGamesV1Params = {
+  league_id?: number | undefined;
+  match_id?: number | undefined;
+  dpc?: boolean | undefined;
+};
+
+export type GetMatchDetailsV1Params = {
+  match_id: number;
+  include_persona_names?: boolean | undefined;
+};
+
+export type GetMatchHistoryV1Params = {
+  hero_id?: number | undefined;
+  game_mode?: number | undefined;
+  skill?: number | undefined;
+  min_players?: string | undefined;
+  account_id?: string | undefined;
+  league_id?: string | undefined;
+  start_at_match_id?: number | undefined;
+  matches_requested?: string | undefined;
+};
+
+export type GetMatchHistoryBySequenceNumV1Params = {
+  start_at_match_seq_num?: number | undefined;
+  matches_requested?: number | undefined;
+};
+
+export type GetTeamInfoByTeamIDV1Params = {
+  start_at_team_id?: number | undefined;
+  teams_requested?: number | undefined;
+};
+
+export type GetTopLiveEventGameV1Params = {
+  partner: any;
+};
+
+export type GetTopLiveGameV1Params = {
+  partner: any;
+};
+
+export type GetTopWeekendTourneyGamesV1Params = {
+  partner: any;
+  home_division?: any | undefined;
+};
+
+export type GetTournamentPlayerStatsV1Params = {
+  account_id: string;
+  league_id?: string | undefined;
+  hero_id?: string | undefined;
+  time_frame?: string | undefined;
+  match_id?: number | undefined;
+};
+
+export type GetTournamentPlayerStatsV2Params = {
+  account_id: string;
+  league_id?: string | undefined;
+  hero_id?: string | undefined;
+  time_frame?: string | undefined;
+  match_id?: number | undefined;
+  phase_id?: number | undefined;
+};
+
+export type GetBroadcasterInfoV1Params = {
+  broadcaster_steam_id: number;
+  league_id?: number | undefined;
+};
+
+export type GetSteamIDForBadgeIDV1Params = {
+  BadgeID: string;
+};
+
+export type SetSteamAccountPurchasedV1Params = {
+  steamid: number;
+  BadgeType: number;
+};
+
+export type SteamAccountValidForBadgeTypeV1Params = {
+  steamid: number;
+  ValidBadgeType1: number;
+  ValidBadgeType2: number;
+  ValidBadgeType3: number;
+  ValidBadgeType4?: number | undefined;
+};
+
+export type GetEventStatsForAccountV1Params = {
+  eventid: number;
+  accountid: number;
+  language?: string | undefined;
+};
+
+export type GetHeroesV1Params = {
+  language?: string | undefined;
+  itemizedonly?: boolean | undefined;
+};
+
+export type GetItemCreatorsV1Params = {
+  itemdef: number;
+};
+
+export type GetItemWorkshopPublishedFileIDsV1Params = {
+  itemdef: number;
+};
+
+export type GetRaritiesV1Params = {
+  language?: string | undefined;
+};
+
+export type GetTournamentPrizePoolV1Params = {
+  leagueid?: number | undefined;
+};
+
+export type GetPlayerItemsV1Params = {
+  steamid: number;
+};
+
+export type GetEquippedPlayerItemsV1Params = {
+  steamid: number;
+  class_id: number;
+};
+
+export type GetSchemaV1Params = {
+  language?: string | undefined;
+};
+
+export type GetSchemaItemsV1Params = {
+  language?: string | undefined;
+  start?: any | undefined;
+};
+
+export type GetSchemaOverviewV1Params = {
+  language?: string | undefined;
+};
+
+export type GetSchemaURLV1Params = Record<string, never>;
+
+export type GetStoreMetaDataV1Params = {
+  language?: string | undefined;
+};
+
+export type GetStoreStatusV1Params = Record<string, never>;
+
+export type GetSchemaV2Params = {
+  language?: string | undefined;
+};
+
+export type GetSchemaURLV2Params = Record<string, never>;
+
 export type GetClientVersionV1Params = Record<string, never>;
 
 export type GetServerVersionV1Params = Record<string, never>;
@@ -10,10 +225,6 @@ export type GetServerVersionV1Params = Record<string, never>;
 export type GetBucketizedDataV1Params = {
   leaderboardName: string;
 };
-
-export type GetAppListV1Params = Record<string, never>;
-
-export type GetAppListV2Params = Record<string, never>;
 
 export type GetSDRConfigV1Params = {
   appid: number;
@@ -37,6 +248,21 @@ export type ViewerHeartbeatV1Params = {
   stream?: any | undefined;
 };
 
+export type SetClientFiltersV1Params = {
+  cdnname: string;
+  allowedipblocks?: string | undefined;
+  allowedasns?: string | undefined;
+  allowedipcountries?: string | undefined;
+};
+
+export type SetPerformanceStatsV1Params = {
+  cdnname: string;
+  mbps_sent?: number | undefined;
+  mbps_recv?: number | undefined;
+  cpu_percent?: number | undefined;
+  cache_hit_percent?: number | undefined;
+};
+
 export type GetCMListV1Params = {
   cellid: number;
   maxcount?: number | undefined;
@@ -51,6 +277,20 @@ export type GetCMListForConnectV1Params = {
 };
 
 export type GetSteamPipeDomainsV1Params = Record<string, never>;
+
+export type GetAssetClassInfoV1Params = {
+  appid: number;
+  language?: string | undefined;
+  class_count: number;
+  classid0: number;
+  instanceid0?: number | undefined;
+};
+
+export type GetAssetPricesV1Params = {
+  appid: number;
+  currency?: string | undefined;
+  language?: string | undefined;
+};
 
 export type GetNewsForAppV1Params = {
   appid: number;
@@ -79,6 +319,43 @@ export type GetPublishedFileDetailsV1Params = {
   'publishedfileids[0]': number;
 };
 
+export type GetUGCFileDetailsV1Params = {
+  steamid?: number | undefined;
+  ugcid: number;
+  appid: number;
+};
+
+export type GetFriendListV1Params = {
+  steamid: number;
+  relationship?: string | undefined;
+};
+
+export type GetPlayerBansV1Params = {
+  steamids: string;
+};
+
+export type GetPlayerSummariesV1Params = {
+  steamids: string;
+};
+
+export type GetPlayerSummariesV2Params = {
+  steamids: string;
+};
+
+export type GetUserGroupListV1Params = {
+  steamid: number;
+};
+
+export type ResolveVanityURLV1Params = {
+  vanityurl: string;
+  url_type?: any | undefined;
+};
+
+export type AuthenticateUserTicketV1Params = {
+  appid: number;
+  ticket: string;
+};
+
 export type GetTokenDetailsV1Params = {
   access_token: string;
 };
@@ -103,13 +380,134 @@ export type GetNumberOfCurrentPlayersV1Params = {
   appid: number;
 };
 
+export type GetPlayerAchievementsV1Params = {
+  steamid: number;
+  appid: number;
+  l?: string | undefined;
+};
+
+export type GetSchemaForGameV1Params = {
+  appid: number;
+  l?: string | undefined;
+};
+
+export type GetSchemaForGameV2Params = {
+  appid: number;
+  l?: string | undefined;
+};
+
+export type GetUserStatsForGameV1Params = {
+  steamid: number;
+  appid: number;
+};
+
+export type GetUserStatsForGameV2Params = {
+  steamid: number;
+  appid: number;
+};
+
 export type GetServerInfoV1Params = Record<string, never>;
 
-export type GetSupportedAPIListV1Params = {
-  key?: string | undefined;
+export type GetSupportedAPIListV1Params = Record<string, never>;
+
+export type GetGoldenWrenchesV1Params = Record<string, never>;
+
+export type GetGoldenWrenchesV2Params = Record<string, never>;
+
+export type GetItemIDV1Params = {
+  steamid: number;
+  PromoID: number;
+};
+
+export type GrantItemV1Params = {
+  steamid: number;
+  PromoID: number;
 };
 
 export type GetWorldStatusV1Params = Record<string, never>;
+
+export type GetAccountListV1Params = Record<string, never>;
+
+export type CreateAccountV1Params = {
+  appid: number;
+  memo: string;
+};
+
+export type SetMemoV1Params = {
+  steamid: number;
+  memo: string;
+};
+
+export type ResetLoginTokenV1Params = {
+  steamid: number;
+};
+
+export type DeleteAccountV1Params = {
+  steamid: number;
+};
+
+export type GetAccountPublicInfoV1Params = {
+  steamid: number;
+};
+
+export type QueryLoginTokenV1Params = {
+  login_token: string;
+};
+
+export type GetServerSteamIDsByIPV1Params = {
+  server_ips: string;
+};
+
+export type GetServerIPsBySteamIDV1Params = {
+  server_steamids: number;
+};
+
+export type QueryByFakeIPV1Params = {
+  fake_ip: number;
+  fake_port: number;
+  app_id: number;
+  query_type: any;
+};
+
+export type IsPlayingSharedGameV1Params = {
+  steamid: number;
+  appid_playing: number;
+};
+
+export type RecordOfflinePlaytimeV1Params = {
+  steamid: number;
+  ticket: string;
+  play_sessions: any;
+};
+
+export type GetRecentlyPlayedGamesV1Params = {
+  steamid: number;
+  count: number;
+};
+
+export type GetOwnedGamesV1Params = {
+  steamid: number;
+  include_appinfo: boolean;
+  include_played_free_games: boolean;
+  appids_filter: number;
+  include_free_sub: boolean;
+  skip_unvetted_apps?: boolean | undefined;
+  language: string;
+  include_extended_appinfo: boolean;
+};
+
+export type GetSteamLevelV1Params = {
+  steamid: number;
+};
+
+export type GetBadgesV1Params = {
+  steamid: number;
+};
+
+export type GetCommunityBadgeProgressV1Params = {
+  steamid: number;
+  badgeid: any;
+};
 
 export type PollAuthSessionStatusV1Params = {
   client_id: number;
@@ -182,6 +580,31 @@ export type PostGameDataFrameRTMPV1Params = {
   frame_data: string;
 };
 
+export type SetSteamCacheClientFiltersV1Params = {
+  cache_id: number;
+  cache_key: string;
+  change_notes: string;
+  allowed_ip_blocks: string;
+};
+
+export type GetSteamCacheNodeParamsV1Params = {
+  cache_id: number;
+  cache_key: string;
+};
+
+export type SetSteamCachePerformanceStatsV1Params = {
+  cache_id: number;
+  cache_key: string;
+  mbps_sent: number;
+  mbps_recv: number;
+  cpu_percent: number;
+  cache_hit_percent: number;
+  num_connected_ips: number;
+  upstream_egress_utilization: number;
+  upstream_peering_utilization: number;
+  upstream_transit_utilization: number;
+};
+
 export type GetCDNForVideoV1Params = {
   property_type: any;
   client_ip: string;
@@ -218,10 +641,191 @@ export type GetUserVoteSummaryV1Params = {
   publishedfileids: number;
 };
 
-export type RecordOfflinePlaytimeV1Params = {
+export type QueryFilesV1Params = {
+  query_type: number;
+  page: number;
+  cursor: string;
+  numperpage?: number | undefined;
+  creator_appid: number;
+  appid: number;
+  requiredtags: string;
+  excludedtags: string;
+  match_all_tags?: boolean | undefined;
+  required_flags: string;
+  omitted_flags: string;
+  search_text: string;
+  filetype: number;
+  child_publishedfileid: number;
+  days: number;
+  include_recent_votes_only: boolean;
+  cache_max_age_seconds?: number | undefined;
+  language?: any | undefined;
+  required_kv_tags: any;
+  taggroups: any;
+  date_range_created: any;
+  date_range_updated: any;
+  excluded_content_descriptors: any;
+  admin_query: boolean;
+  totalonly: boolean;
+  ids_only: boolean;
+  return_vote_data: boolean;
+  return_tags: boolean;
+  return_kv_tags: boolean;
+  return_previews: boolean;
+  return_children: boolean;
+  return_short_description: boolean;
+  return_for_sale_data: boolean;
+  return_metadata?: boolean | undefined;
+  return_playtime_stats: number;
+  return_details: boolean;
+  strip_description_bbcode: boolean;
+  desired_revision?: any | undefined;
+  return_reactions?: boolean | undefined;
+};
+
+export type GetSubSectionDataV1Params = {
+  publishedfileid: number;
+  for_table_of_contents: boolean;
+  specific_sectionid: number;
+  desired_revision?: any | undefined;
+};
+
+export type GetDetailsV1Params = {
+  publishedfileids: number;
+  includetags: boolean;
+  includeadditionalpreviews: boolean;
+  includechildren: boolean;
+  includekvtags: boolean;
+  includevotes: boolean;
+  short_description: boolean;
+  includeforsaledata: boolean;
+  includemetadata: boolean;
+  language?: any | undefined;
+  return_playtime_stats: number;
+  appid: number;
+  strip_description_bbcode: boolean;
+  desired_revision?: any | undefined;
+  includereactions?: boolean | undefined;
+  admin_query: boolean;
+};
+
+export type GetUserFilesV1Params = {
   steamid: number;
-  ticket: string;
-  play_sessions: any;
+  appid: number;
+  shortcutid: number;
+  page?: number | undefined;
+  numperpage?: number | undefined;
+  type?: string | undefined;
+  sortmethod?: string | undefined;
+  privacy: number;
+  requiredtags: string;
+  excludedtags: string;
+  required_kv_tags: any;
+  filetype: number;
+  creator_appid: number;
+  match_cloud_filename: string;
+  cache_max_age_seconds?: number | undefined;
+  language?: any | undefined;
+  taggroups: any;
+  excluded_content_descriptors: any;
+  admin_query: boolean;
+  totalonly: boolean;
+  ids_only: boolean;
+  return_vote_data?: boolean | undefined;
+  return_tags: boolean;
+  return_kv_tags?: boolean | undefined;
+  return_previews: boolean;
+  return_children: boolean;
+  return_short_description?: boolean | undefined;
+  return_for_sale_data: boolean;
+  return_metadata?: boolean | undefined;
+  return_playtime_stats: number;
+  strip_description_bbcode: boolean;
+  return_reactions?: boolean | undefined;
+  startindex_override: number;
+  desired_revision?: any | undefined;
+  return_apps: boolean;
+};
+
+export type GetUserFileCountV1Params = {
+  steamid: number;
+  appid: number;
+  shortcutid: number;
+  page?: number | undefined;
+  numperpage?: number | undefined;
+  type?: string | undefined;
+  sortmethod?: string | undefined;
+  privacy: number;
+  requiredtags: string;
+  excludedtags: string;
+  required_kv_tags: any;
+  filetype: number;
+  creator_appid: number;
+  match_cloud_filename: string;
+  cache_max_age_seconds?: number | undefined;
+  language?: any | undefined;
+  taggroups: any;
+  excluded_content_descriptors: any;
+  admin_query: boolean;
+  totalonly: boolean;
+  ids_only: boolean;
+  return_vote_data?: boolean | undefined;
+  return_tags: boolean;
+  return_kv_tags?: boolean | undefined;
+  return_previews: boolean;
+  return_children: boolean;
+  return_short_description?: boolean | undefined;
+  return_for_sale_data: boolean;
+  return_metadata?: boolean | undefined;
+  return_playtime_stats: number;
+  strip_description_bbcode: boolean;
+  return_reactions?: boolean | undefined;
+  startindex_override: number;
+  desired_revision?: any | undefined;
+  return_apps: boolean;
+};
+
+export type GetTradeHistoryV1Params = {
+  max_trades: number;
+  start_after_time: number;
+  start_after_tradeid: number;
+  navigating_back: boolean;
+  get_descriptions: boolean;
+  language: string;
+  include_failed: boolean;
+  include_total: boolean;
+};
+
+export type GetTradeStatusV1Params = {
+  tradeid: number;
+  get_descriptions: boolean;
+  language: string;
+};
+
+export type GetTradeOffersV1Params = {
+  get_sent_offers: boolean;
+  get_received_offers: boolean;
+  get_descriptions: boolean;
+  language: string;
+  active_only: boolean;
+  historical_only: boolean;
+  time_historical_cutoff: number;
+  cursor?: number | undefined;
+};
+
+export type GetTradeOfferV1Params = {
+  tradeofferid: number;
+  language: string;
+  get_descriptions: boolean;
+};
+
+export type GetTradeOffersSummaryV1Params = {
+  time_last_visit: number;
+};
+
+export type GetTradeHoldDurationsV1Params = {
+  steamid_target: number;
+  trade_offer_access_token: string;
 };
 
 export type UserCreateSessionV1Params = {
@@ -244,6 +848,26 @@ export type UserDeleteSessionV1Params = {
   sessionid: number;
   appid: number;
   steamid: number;
+};
+
+export type SplitItemStackV1Params = {
+  appid: number;
+  itemid: number;
+  quantity: number;
+  steamid: number;
+};
+
+export type CombineItemStacksV1Params = {
+  appid: number;
+  fromitemid: number;
+  destitemid: number;
+  quantity: number;
+  steamid: number;
+};
+
+export type GetPriceSheetV1Params = {
+  ecurrency: any;
+  currency_code: string;
 };
 
 export type GetWishlistSortedFilteredV1Params = {
@@ -272,6 +896,18 @@ export type GetGamesFollowedCountV1Params = {
   steamid: number;
 };
 
+export type GetAppListV1Params = {
+  if_modified_since?: number | undefined;
+  have_description_language?: string | undefined;
+  include_games?: boolean | undefined;
+  include_dlc?: boolean | undefined;
+  include_software?: boolean | undefined;
+  include_videos?: boolean | undefined;
+  include_hardware?: boolean | undefined;
+  last_appid?: number | undefined;
+  max_results?: number | undefined;
+};
+
 export type GetRecommendedTagsForUserV1Params = {
   language: string;
   country_code: string;
@@ -290,10 +926,42 @@ export type GetApplicationLogDemandV1Params = {
   appid: number;
 };
 
-export type InterfaceName = 'IClientStats_1046930' | 'IGCVersion_1046930' | 'IGCVersion_1269260' | 'IGCVersion_1422450' | 'IGCVersion_440' | 'IGCVersion_570' | 'IGCVersion_583950' | 'IGCVersion_730' | 'IPortal2Leaderboards_620' | 'ISteamApps' | 'ISteamBroadcast' | 'ISteamDirectory' | 'ISteamNews' | 'ISteamRemoteStorage' | 'ISteamUserOAuth' | 'ISteamUserStats' | 'ISteamWebAPIUtil' | 'ITFSystem_440' | 'IAuthenticationService' | 'IBroadcastService' | 'IContentServerDirectoryService' | 'IPublishedFileService' | 'IPlayerService' | 'IGameNotificationsService' | 'IWishlistService' | 'IStoreService' | 'IHelpRequestLogsService';
+export type ReportCheatDataV1Params = {
+  steamid: number;
+  appid: number;
+  pathandfilename: string;
+  webcheaturl: string;
+  time_now: number;
+  time_started: number;
+  time_stopped: number;
+  cheatname: string;
+  game_process_id: number;
+  cheat_process_id: number;
+  cheat_param_1: number;
+  cheat_param_2: number;
+  cheat_data_dump: string;
+};
+
+export type InterfaceName = 'IClientStats_1046930' | 'ICSGOPlayers_730' | 'ICSGOServers_730' | 'ICSGOTournaments_730' | 'IDOTA2MatchStats_570' | 'IDOTA2Match_570' | 'IDOTA2StreamSystem_570' | 'IDOTA2Ticket_570' | 'IEconDOTA2_570' | 'IEconItems_1046930' | 'IEconItems_1269260' | 'IEconItems_238460' | 'IEconItems_440' | 'IEconItems_570' | 'IEconItems_583950' | 'IEconItems_620' | 'IEconItems_730' | 'IGCVersion_1046930' | 'IGCVersion_1269260' | 'IGCVersion_1422450' | 'IGCVersion_440' | 'IGCVersion_570' | 'IGCVersion_583950' | 'IGCVersion_730' | 'IPortal2Leaderboards_620' | 'ISteamApps' | 'ISteamBroadcast' | 'ISteamCDN' | 'ISteamDirectory' | 'ISteamEconomy' | 'ISteamNews' | 'ISteamRemoteStorage' | 'ISteamUser' | 'ISteamUserAuth' | 'ISteamUserOAuth' | 'ISteamUserStats' | 'ISteamWebAPIUtil' | 'ITFItems_440' | 'ITFPromos_440' | 'ITFPromos_620' | 'ITFSystem_440' | 'IGameServersService' | 'IPlayerService' | 'IAuthenticationService' | 'IBroadcastService' | 'IContentServerConfigService' | 'IContentServerDirectoryService' | 'IPublishedFileService' | 'IEconService' | 'IGameNotificationsService' | 'IInventoryService' | 'IWishlistService' | 'IStoreService' | 'IHelpRequestLogsService' | 'ICheatReportingService';
 
 export type MethodName<I extends InterfaceName> = 
   I extends 'IClientStats_1046930' ? 'ReportEvent_v1' :
+  I extends 'ICSGOPlayers_730' ? 'GetNextMatchSharingCode_v1' :
+  I extends 'ICSGOServers_730' ? 'GetGameMapsPlaytime_v1' | 'GetGameServersStatus_v1' :
+  I extends 'ICSGOTournaments_730' ? 'GetTournamentFantasyLineup_v1' | 'GetTournamentItems_v1' | 'GetTournamentLayout_v1' | 'GetTournamentPredictions_v1' | 'UploadTournamentFantasyLineup_v1' | 'UploadTournamentPredictions_v1' :
+  I extends 'IDOTA2MatchStats_570' ? 'GetRealtimeStats_v1' :
+  I extends 'IDOTA2Match_570' ? 'GetLiveLeagueGames_v1' | 'GetMatchDetails_v1' | 'GetMatchHistory_v1' | 'GetMatchHistoryBySequenceNum_v1' | 'GetTeamInfoByTeamID_v1' | 'GetTopLiveEventGame_v1' | 'GetTopLiveGame_v1' | 'GetTopWeekendTourneyGames_v1' | 'GetTournamentPlayerStats_v1' | 'GetTournamentPlayerStats_v2' :
+  I extends 'IDOTA2StreamSystem_570' ? 'GetBroadcasterInfo_v1' :
+  I extends 'IDOTA2Ticket_570' ? 'GetSteamIDForBadgeID_v1' | 'SetSteamAccountPurchased_v1' | 'SteamAccountValidForBadgeType_v1' :
+  I extends 'IEconDOTA2_570' ? 'GetEventStatsForAccount_v1' | 'GetHeroes_v1' | 'GetItemCreators_v1' | 'GetItemWorkshopPublishedFileIDs_v1' | 'GetRarities_v1' | 'GetTournamentPrizePool_v1' :
+  I extends 'IEconItems_1046930' ? 'GetPlayerItems_v1' :
+  I extends 'IEconItems_1269260' ? 'GetEquippedPlayerItems_v1' :
+  I extends 'IEconItems_238460' ? 'GetPlayerItems_v1' :
+  I extends 'IEconItems_440' ? 'GetPlayerItems_v1' | 'GetSchema_v1' | 'GetSchemaItems_v1' | 'GetSchemaOverview_v1' | 'GetSchemaURL_v1' | 'GetStoreMetaData_v1' | 'GetStoreStatus_v1' :
+  I extends 'IEconItems_570' ? 'GetPlayerItems_v1' | 'GetStoreMetaData_v1' :
+  I extends 'IEconItems_583950' ? 'GetEquippedPlayerItems_v1' :
+  I extends 'IEconItems_620' ? 'GetPlayerItems_v1' | 'GetSchema_v1' :
+  I extends 'IEconItems_730' ? 'GetPlayerItems_v1' | 'GetSchema_v2' | 'GetSchemaURL_v2' | 'GetStoreMetaData_v1' :
   I extends 'IGCVersion_1046930' ? 'GetClientVersion_v1' | 'GetServerVersion_v1' :
   I extends 'IGCVersion_1269260' ? 'GetClientVersion_v1' | 'GetServerVersion_v1' :
   I extends 'IGCVersion_1422450' ? 'GetClientVersion_v1' | 'GetServerVersion_v1' :
@@ -302,54 +970,142 @@ export type MethodName<I extends InterfaceName> =
   I extends 'IGCVersion_583950' ? 'GetClientVersion_v1' | 'GetServerVersion_v1' :
   I extends 'IGCVersion_730' ? 'GetServerVersion_v1' :
   I extends 'IPortal2Leaderboards_620' ? 'GetBucketizedData_v1' :
-  I extends 'ISteamApps' ? 'GetAppList_v1' | 'GetAppList_v2' | 'GetSDRConfig_v1' | 'GetServersAtAddress_v1' | 'UpToDateCheck_v1' :
+  I extends 'ISteamApps' ? 'GetSDRConfig_v1' | 'GetServersAtAddress_v1' | 'UpToDateCheck_v1' :
   I extends 'ISteamBroadcast' ? 'PlayerStats_v1' | 'ViewerHeartbeat_v1' :
+  I extends 'ISteamCDN' ? 'SetClientFilters_v1' | 'SetPerformanceStats_v1' :
   I extends 'ISteamDirectory' ? 'GetCMList_v1' | 'GetCMListForConnect_v1' | 'GetSteamPipeDomains_v1' :
+  I extends 'ISteamEconomy' ? 'GetAssetClassInfo_v1' | 'GetAssetPrices_v1' :
   I extends 'ISteamNews' ? 'GetNewsForApp_v1' | 'GetNewsForApp_v2' :
-  I extends 'ISteamRemoteStorage' ? 'GetCollectionDetails_v1' | 'GetPublishedFileDetails_v1' :
+  I extends 'ISteamRemoteStorage' ? 'GetCollectionDetails_v1' | 'GetPublishedFileDetails_v1' | 'GetUGCFileDetails_v1' :
+  I extends 'ISteamUser' ? 'GetFriendList_v1' | 'GetPlayerBans_v1' | 'GetPlayerSummaries_v1' | 'GetPlayerSummaries_v2' | 'GetUserGroupList_v1' | 'ResolveVanityURL_v1' :
+  I extends 'ISteamUserAuth' ? 'AuthenticateUserTicket_v1' :
   I extends 'ISteamUserOAuth' ? 'GetTokenDetails_v1' :
-  I extends 'ISteamUserStats' ? 'GetGlobalAchievementPercentagesForApp_v1' | 'GetGlobalAchievementPercentagesForApp_v2' | 'GetGlobalStatsForGame_v1' | 'GetNumberOfCurrentPlayers_v1' :
+  I extends 'ISteamUserStats' ? 'GetGlobalAchievementPercentagesForApp_v1' | 'GetGlobalAchievementPercentagesForApp_v2' | 'GetGlobalStatsForGame_v1' | 'GetNumberOfCurrentPlayers_v1' | 'GetPlayerAchievements_v1' | 'GetSchemaForGame_v1' | 'GetSchemaForGame_v2' | 'GetUserStatsForGame_v1' | 'GetUserStatsForGame_v2' :
   I extends 'ISteamWebAPIUtil' ? 'GetServerInfo_v1' | 'GetSupportedAPIList_v1' :
+  I extends 'ITFItems_440' ? 'GetGoldenWrenches_v1' | 'GetGoldenWrenches_v2' :
+  I extends 'ITFPromos_440' ? 'GetItemID_v1' | 'GrantItem_v1' :
+  I extends 'ITFPromos_620' ? 'GetItemID_v1' | 'GrantItem_v1' :
   I extends 'ITFSystem_440' ? 'GetWorldStatus_v1' :
+  I extends 'IGameServersService' ? 'GetAccountList_v1' | 'CreateAccount_v1' | 'SetMemo_v1' | 'ResetLoginToken_v1' | 'DeleteAccount_v1' | 'GetAccountPublicInfo_v1' | 'QueryLoginToken_v1' | 'GetServerSteamIDsByIP_v1' | 'GetServerIPsBySteamID_v1' | 'QueryByFakeIP_v1' :
+  I extends 'IPlayerService' ? 'IsPlayingSharedGame_v1' | 'RecordOfflinePlaytime_v1' | 'GetRecentlyPlayedGames_v1' | 'GetOwnedGames_v1' | 'GetSteamLevel_v1' | 'GetBadges_v1' | 'GetCommunityBadgeProgress_v1' :
   I extends 'IAuthenticationService' ? 'PollAuthSessionStatus_v1' | 'GetAuthSessionInfo_v1' | 'GetAuthSessionRiskInfo_v1' | 'NotifyRiskQuizResults_v1' | 'GetPasswordRSAPublicKey_v1' | 'BeginAuthSessionViaCredentials_v1' | 'UpdateAuthSessionWithSteamGuardCode_v1' | 'BeginAuthSessionViaQR_v1' | 'UpdateAuthSessionWithMobileConfirmation_v1' :
   I extends 'IBroadcastService' ? 'PostGameDataFrameRTMP_v1' :
+  I extends 'IContentServerConfigService' ? 'SetSteamCacheClientFilters_v1' | 'GetSteamCacheNodeParams_v1' | 'SetSteamCachePerformanceStats_v1' :
   I extends 'IContentServerDirectoryService' ? 'GetCDNForVideo_v1' | 'PickSingleContentServer_v1' | 'GetServersForSteamPipe_v1' | 'GetClientUpdateHosts_v1' | 'GetDepotPatchInfo_v1' :
-  I extends 'IPublishedFileService' ? 'GetUserVoteSummary_v1' :
-  I extends 'IPlayerService' ? 'RecordOfflinePlaytime_v1' :
+  I extends 'IPublishedFileService' ? 'GetUserVoteSummary_v1' | 'QueryFiles_v1' | 'GetSubSectionData_v1' | 'GetDetails_v1' | 'GetUserFiles_v1' | 'GetUserFileCount_v1' :
+  I extends 'IEconService' ? 'GetTradeHistory_v1' | 'GetTradeStatus_v1' | 'GetTradeOffers_v1' | 'GetTradeOffer_v1' | 'GetTradeOffersSummary_v1' | 'GetTradeHoldDurations_v1' :
   I extends 'IGameNotificationsService' ? 'UserCreateSession_v1' | 'UserUpdateSession_v1' | 'UserDeleteSession_v1' :
+  I extends 'IInventoryService' ? 'SplitItemStack_v1' | 'CombineItemStacks_v1' | 'GetPriceSheet_v1' :
   I extends 'IWishlistService' ? 'GetWishlistSortedFiltered_v1' | 'GetWishlist_v1' | 'GetWishlistItemCount_v1' :
-  I extends 'IStoreService' ? 'GetGamesFollowed_v1' | 'GetGamesFollowedCount_v1' | 'GetRecommendedTagsForUser_v1' :
+  I extends 'IStoreService' ? 'GetGamesFollowed_v1' | 'GetGamesFollowedCount_v1' | 'GetAppList_v1' | 'GetRecommendedTagsForUser_v1' :
   I extends 'IHelpRequestLogsService' ? 'UploadUserApplicationLog_v1' | 'GetApplicationLogDemand_v1' :
+  I extends 'ICheatReportingService' ? 'ReportCheatData_v1' :
   never;
 
 /** Utility type to map method names to their generated parameter types */
 export type MethodParamsMap = {
   'ReportEvent_v1': ReportEventV1Params;
+  'GetNextMatchSharingCode_v1': GetNextMatchSharingCodeV1Params;
+  'GetGameMapsPlaytime_v1': GetGameMapsPlaytimeV1Params;
+  'GetGameServersStatus_v1': GetGameServersStatusV1Params;
+  'GetTournamentFantasyLineup_v1': GetTournamentFantasyLineupV1Params;
+  'GetTournamentItems_v1': GetTournamentItemsV1Params;
+  'GetTournamentLayout_v1': GetTournamentLayoutV1Params;
+  'GetTournamentPredictions_v1': GetTournamentPredictionsV1Params;
+  'UploadTournamentFantasyLineup_v1': UploadTournamentFantasyLineupV1Params;
+  'UploadTournamentPredictions_v1': UploadTournamentPredictionsV1Params;
+  'GetRealtimeStats_v1': GetRealtimeStatsV1Params;
+  'GetLiveLeagueGames_v1': GetLiveLeagueGamesV1Params;
+  'GetMatchDetails_v1': GetMatchDetailsV1Params;
+  'GetMatchHistory_v1': GetMatchHistoryV1Params;
+  'GetMatchHistoryBySequenceNum_v1': GetMatchHistoryBySequenceNumV1Params;
+  'GetTeamInfoByTeamID_v1': GetTeamInfoByTeamIDV1Params;
+  'GetTopLiveEventGame_v1': GetTopLiveEventGameV1Params;
+  'GetTopLiveGame_v1': GetTopLiveGameV1Params;
+  'GetTopWeekendTourneyGames_v1': GetTopWeekendTourneyGamesV1Params;
+  'GetTournamentPlayerStats_v1': GetTournamentPlayerStatsV1Params;
+  'GetTournamentPlayerStats_v2': GetTournamentPlayerStatsV2Params;
+  'GetBroadcasterInfo_v1': GetBroadcasterInfoV1Params;
+  'GetSteamIDForBadgeID_v1': GetSteamIDForBadgeIDV1Params;
+  'SetSteamAccountPurchased_v1': SetSteamAccountPurchasedV1Params;
+  'SteamAccountValidForBadgeType_v1': SteamAccountValidForBadgeTypeV1Params;
+  'GetEventStatsForAccount_v1': GetEventStatsForAccountV1Params;
+  'GetHeroes_v1': GetHeroesV1Params;
+  'GetItemCreators_v1': GetItemCreatorsV1Params;
+  'GetItemWorkshopPublishedFileIDs_v1': GetItemWorkshopPublishedFileIDsV1Params;
+  'GetRarities_v1': GetRaritiesV1Params;
+  'GetTournamentPrizePool_v1': GetTournamentPrizePoolV1Params;
+  'GetPlayerItems_v1': GetPlayerItemsV1Params;
+  'GetEquippedPlayerItems_v1': GetEquippedPlayerItemsV1Params;
+  'GetSchema_v1': GetSchemaV1Params;
+  'GetSchemaItems_v1': GetSchemaItemsV1Params;
+  'GetSchemaOverview_v1': GetSchemaOverviewV1Params;
+  'GetSchemaURL_v1': GetSchemaURLV1Params;
+  'GetStoreMetaData_v1': GetStoreMetaDataV1Params;
+  'GetStoreStatus_v1': GetStoreStatusV1Params;
+  'GetSchema_v2': GetSchemaV2Params;
+  'GetSchemaURL_v2': GetSchemaURLV2Params;
   'GetClientVersion_v1': GetClientVersionV1Params;
   'GetServerVersion_v1': GetServerVersionV1Params;
   'GetBucketizedData_v1': GetBucketizedDataV1Params;
-  'GetAppList_v1': GetAppListV1Params;
-  'GetAppList_v2': GetAppListV2Params;
   'GetSDRConfig_v1': GetSDRConfigV1Params;
   'GetServersAtAddress_v1': GetServersAtAddressV1Params;
   'UpToDateCheck_v1': UpToDateCheckV1Params;
   'PlayerStats_v1': PlayerStatsV1Params;
   'ViewerHeartbeat_v1': ViewerHeartbeatV1Params;
+  'SetClientFilters_v1': SetClientFiltersV1Params;
+  'SetPerformanceStats_v1': SetPerformanceStatsV1Params;
   'GetCMList_v1': GetCMListV1Params;
   'GetCMListForConnect_v1': GetCMListForConnectV1Params;
   'GetSteamPipeDomains_v1': GetSteamPipeDomainsV1Params;
+  'GetAssetClassInfo_v1': GetAssetClassInfoV1Params;
+  'GetAssetPrices_v1': GetAssetPricesV1Params;
   'GetNewsForApp_v1': GetNewsForAppV1Params;
   'GetNewsForApp_v2': GetNewsForAppV2Params;
   'GetCollectionDetails_v1': GetCollectionDetailsV1Params;
   'GetPublishedFileDetails_v1': GetPublishedFileDetailsV1Params;
+  'GetUGCFileDetails_v1': GetUGCFileDetailsV1Params;
+  'GetFriendList_v1': GetFriendListV1Params;
+  'GetPlayerBans_v1': GetPlayerBansV1Params;
+  'GetPlayerSummaries_v1': GetPlayerSummariesV1Params;
+  'GetPlayerSummaries_v2': GetPlayerSummariesV2Params;
+  'GetUserGroupList_v1': GetUserGroupListV1Params;
+  'ResolveVanityURL_v1': ResolveVanityURLV1Params;
+  'AuthenticateUserTicket_v1': AuthenticateUserTicketV1Params;
   'GetTokenDetails_v1': GetTokenDetailsV1Params;
   'GetGlobalAchievementPercentagesForApp_v1': GetGlobalAchievementPercentagesForAppV1Params;
   'GetGlobalAchievementPercentagesForApp_v2': GetGlobalAchievementPercentagesForAppV2Params;
   'GetGlobalStatsForGame_v1': GetGlobalStatsForGameV1Params;
   'GetNumberOfCurrentPlayers_v1': GetNumberOfCurrentPlayersV1Params;
+  'GetPlayerAchievements_v1': GetPlayerAchievementsV1Params;
+  'GetSchemaForGame_v1': GetSchemaForGameV1Params;
+  'GetSchemaForGame_v2': GetSchemaForGameV2Params;
+  'GetUserStatsForGame_v1': GetUserStatsForGameV1Params;
+  'GetUserStatsForGame_v2': GetUserStatsForGameV2Params;
   'GetServerInfo_v1': GetServerInfoV1Params;
   'GetSupportedAPIList_v1': GetSupportedAPIListV1Params;
+  'GetGoldenWrenches_v1': GetGoldenWrenchesV1Params;
+  'GetGoldenWrenches_v2': GetGoldenWrenchesV2Params;
+  'GetItemID_v1': GetItemIDV1Params;
+  'GrantItem_v1': GrantItemV1Params;
   'GetWorldStatus_v1': GetWorldStatusV1Params;
+  'GetAccountList_v1': GetAccountListV1Params;
+  'CreateAccount_v1': CreateAccountV1Params;
+  'SetMemo_v1': SetMemoV1Params;
+  'ResetLoginToken_v1': ResetLoginTokenV1Params;
+  'DeleteAccount_v1': DeleteAccountV1Params;
+  'GetAccountPublicInfo_v1': GetAccountPublicInfoV1Params;
+  'QueryLoginToken_v1': QueryLoginTokenV1Params;
+  'GetServerSteamIDsByIP_v1': GetServerSteamIDsByIPV1Params;
+  'GetServerIPsBySteamID_v1': GetServerIPsBySteamIDV1Params;
+  'QueryByFakeIP_v1': QueryByFakeIPV1Params;
+  'IsPlayingSharedGame_v1': IsPlayingSharedGameV1Params;
+  'RecordOfflinePlaytime_v1': RecordOfflinePlaytimeV1Params;
+  'GetRecentlyPlayedGames_v1': GetRecentlyPlayedGamesV1Params;
+  'GetOwnedGames_v1': GetOwnedGamesV1Params;
+  'GetSteamLevel_v1': GetSteamLevelV1Params;
+  'GetBadges_v1': GetBadgesV1Params;
+  'GetCommunityBadgeProgress_v1': GetCommunityBadgeProgressV1Params;
   'PollAuthSessionStatus_v1': PollAuthSessionStatusV1Params;
   'GetAuthSessionInfo_v1': GetAuthSessionInfoV1Params;
   'GetAuthSessionRiskInfo_v1': GetAuthSessionRiskInfoV1Params;
@@ -360,30 +1116,129 @@ export type MethodParamsMap = {
   'BeginAuthSessionViaQR_v1': BeginAuthSessionViaQRV1Params;
   'UpdateAuthSessionWithMobileConfirmation_v1': UpdateAuthSessionWithMobileConfirmationV1Params;
   'PostGameDataFrameRTMP_v1': PostGameDataFrameRTMPV1Params;
+  'SetSteamCacheClientFilters_v1': SetSteamCacheClientFiltersV1Params;
+  'GetSteamCacheNodeParams_v1': GetSteamCacheNodeParamsV1Params;
+  'SetSteamCachePerformanceStats_v1': SetSteamCachePerformanceStatsV1Params;
   'GetCDNForVideo_v1': GetCDNForVideoV1Params;
   'PickSingleContentServer_v1': PickSingleContentServerV1Params;
   'GetServersForSteamPipe_v1': GetServersForSteamPipeV1Params;
   'GetClientUpdateHosts_v1': GetClientUpdateHostsV1Params;
   'GetDepotPatchInfo_v1': GetDepotPatchInfoV1Params;
   'GetUserVoteSummary_v1': GetUserVoteSummaryV1Params;
-  'RecordOfflinePlaytime_v1': RecordOfflinePlaytimeV1Params;
+  'QueryFiles_v1': QueryFilesV1Params;
+  'GetSubSectionData_v1': GetSubSectionDataV1Params;
+  'GetDetails_v1': GetDetailsV1Params;
+  'GetUserFiles_v1': GetUserFilesV1Params;
+  'GetUserFileCount_v1': GetUserFileCountV1Params;
+  'GetTradeHistory_v1': GetTradeHistoryV1Params;
+  'GetTradeStatus_v1': GetTradeStatusV1Params;
+  'GetTradeOffers_v1': GetTradeOffersV1Params;
+  'GetTradeOffer_v1': GetTradeOfferV1Params;
+  'GetTradeOffersSummary_v1': GetTradeOffersSummaryV1Params;
+  'GetTradeHoldDurations_v1': GetTradeHoldDurationsV1Params;
   'UserCreateSession_v1': UserCreateSessionV1Params;
   'UserUpdateSession_v1': UserUpdateSessionV1Params;
   'UserDeleteSession_v1': UserDeleteSessionV1Params;
+  'SplitItemStack_v1': SplitItemStackV1Params;
+  'CombineItemStacks_v1': CombineItemStacksV1Params;
+  'GetPriceSheet_v1': GetPriceSheetV1Params;
   'GetWishlistSortedFiltered_v1': GetWishlistSortedFilteredV1Params;
   'GetWishlist_v1': GetWishlistV1Params;
   'GetWishlistItemCount_v1': GetWishlistItemCountV1Params;
   'GetGamesFollowed_v1': GetGamesFollowedV1Params;
   'GetGamesFollowedCount_v1': GetGamesFollowedCountV1Params;
+  'GetAppList_v1': GetAppListV1Params;
   'GetRecommendedTagsForUser_v1': GetRecommendedTagsForUserV1Params;
   'UploadUserApplicationLog_v1': UploadUserApplicationLogV1Params;
   'GetApplicationLogDemand_v1': GetApplicationLogDemandV1Params;
+  'ReportCheatData_v1': ReportCheatDataV1Params;
 };
 
 /** Metadata for each generated method identifier */
 export const methodInfo = {
   'IClientStats_1046930': {
     'ReportEvent_v1': { interface: 'IClientStats_1046930', name: 'ReportEvent', version: 1, httpMethod: 'POST' },
+  },
+  'ICSGOPlayers_730': {
+    'GetNextMatchSharingCode_v1': { interface: 'ICSGOPlayers_730', name: 'GetNextMatchSharingCode', version: 1, httpMethod: 'GET' },
+  },
+  'ICSGOServers_730': {
+    'GetGameMapsPlaytime_v1': { interface: 'ICSGOServers_730', name: 'GetGameMapsPlaytime', version: 1, httpMethod: 'GET' },
+    'GetGameServersStatus_v1': { interface: 'ICSGOServers_730', name: 'GetGameServersStatus', version: 1, httpMethod: 'GET' },
+  },
+  'ICSGOTournaments_730': {
+    'GetTournamentFantasyLineup_v1': { interface: 'ICSGOTournaments_730', name: 'GetTournamentFantasyLineup', version: 1, httpMethod: 'GET' },
+    'GetTournamentItems_v1': { interface: 'ICSGOTournaments_730', name: 'GetTournamentItems', version: 1, httpMethod: 'GET' },
+    'GetTournamentLayout_v1': { interface: 'ICSGOTournaments_730', name: 'GetTournamentLayout', version: 1, httpMethod: 'GET' },
+    'GetTournamentPredictions_v1': { interface: 'ICSGOTournaments_730', name: 'GetTournamentPredictions', version: 1, httpMethod: 'GET' },
+    'UploadTournamentFantasyLineup_v1': { interface: 'ICSGOTournaments_730', name: 'UploadTournamentFantasyLineup', version: 1, httpMethod: 'POST' },
+    'UploadTournamentPredictions_v1': { interface: 'ICSGOTournaments_730', name: 'UploadTournamentPredictions', version: 1, httpMethod: 'POST' },
+  },
+  'IDOTA2MatchStats_570': {
+    'GetRealtimeStats_v1': { interface: 'IDOTA2MatchStats_570', name: 'GetRealtimeStats', version: 1, httpMethod: 'GET' },
+  },
+  'IDOTA2Match_570': {
+    'GetLiveLeagueGames_v1': { interface: 'IDOTA2Match_570', name: 'GetLiveLeagueGames', version: 1, httpMethod: 'GET' },
+    'GetMatchDetails_v1': { interface: 'IDOTA2Match_570', name: 'GetMatchDetails', version: 1, httpMethod: 'GET' },
+    'GetMatchHistory_v1': { interface: 'IDOTA2Match_570', name: 'GetMatchHistory', version: 1, httpMethod: 'GET' },
+    'GetMatchHistoryBySequenceNum_v1': { interface: 'IDOTA2Match_570', name: 'GetMatchHistoryBySequenceNum', version: 1, httpMethod: 'GET' },
+    'GetTeamInfoByTeamID_v1': { interface: 'IDOTA2Match_570', name: 'GetTeamInfoByTeamID', version: 1, httpMethod: 'GET' },
+    'GetTopLiveEventGame_v1': { interface: 'IDOTA2Match_570', name: 'GetTopLiveEventGame', version: 1, httpMethod: 'GET' },
+    'GetTopLiveGame_v1': { interface: 'IDOTA2Match_570', name: 'GetTopLiveGame', version: 1, httpMethod: 'GET' },
+    'GetTopWeekendTourneyGames_v1': { interface: 'IDOTA2Match_570', name: 'GetTopWeekendTourneyGames', version: 1, httpMethod: 'GET' },
+    'GetTournamentPlayerStats_v1': { interface: 'IDOTA2Match_570', name: 'GetTournamentPlayerStats', version: 1, httpMethod: 'GET' },
+    'GetTournamentPlayerStats_v2': { interface: 'IDOTA2Match_570', name: 'GetTournamentPlayerStats', version: 2, httpMethod: 'GET' },
+  },
+  'IDOTA2StreamSystem_570': {
+    'GetBroadcasterInfo_v1': { interface: 'IDOTA2StreamSystem_570', name: 'GetBroadcasterInfo', version: 1, httpMethod: 'GET' },
+  },
+  'IDOTA2Ticket_570': {
+    'GetSteamIDForBadgeID_v1': { interface: 'IDOTA2Ticket_570', name: 'GetSteamIDForBadgeID', version: 1, httpMethod: 'GET' },
+    'SetSteamAccountPurchased_v1': { interface: 'IDOTA2Ticket_570', name: 'SetSteamAccountPurchased', version: 1, httpMethod: 'POST' },
+    'SteamAccountValidForBadgeType_v1': { interface: 'IDOTA2Ticket_570', name: 'SteamAccountValidForBadgeType', version: 1, httpMethod: 'GET' },
+  },
+  'IEconDOTA2_570': {
+    'GetEventStatsForAccount_v1': { interface: 'IEconDOTA2_570', name: 'GetEventStatsForAccount', version: 1, httpMethod: 'GET' },
+    'GetHeroes_v1': { interface: 'IEconDOTA2_570', name: 'GetHeroes', version: 1, httpMethod: 'GET' },
+    'GetItemCreators_v1': { interface: 'IEconDOTA2_570', name: 'GetItemCreators', version: 1, httpMethod: 'GET' },
+    'GetItemWorkshopPublishedFileIDs_v1': { interface: 'IEconDOTA2_570', name: 'GetItemWorkshopPublishedFileIDs', version: 1, httpMethod: 'GET' },
+    'GetRarities_v1': { interface: 'IEconDOTA2_570', name: 'GetRarities', version: 1, httpMethod: 'GET' },
+    'GetTournamentPrizePool_v1': { interface: 'IEconDOTA2_570', name: 'GetTournamentPrizePool', version: 1, httpMethod: 'GET' },
+  },
+  'IEconItems_1046930': {
+    'GetPlayerItems_v1': { interface: 'IEconItems_1046930', name: 'GetPlayerItems', version: 1, httpMethod: 'GET' },
+  },
+  'IEconItems_1269260': {
+    'GetEquippedPlayerItems_v1': { interface: 'IEconItems_1269260', name: 'GetEquippedPlayerItems', version: 1, httpMethod: 'GET' },
+  },
+  'IEconItems_238460': {
+    'GetPlayerItems_v1': { interface: 'IEconItems_238460', name: 'GetPlayerItems', version: 1, httpMethod: 'GET' },
+  },
+  'IEconItems_440': {
+    'GetPlayerItems_v1': { interface: 'IEconItems_440', name: 'GetPlayerItems', version: 1, httpMethod: 'GET' },
+    'GetSchema_v1': { interface: 'IEconItems_440', name: 'GetSchema', version: 1, httpMethod: 'GET' },
+    'GetSchemaItems_v1': { interface: 'IEconItems_440', name: 'GetSchemaItems', version: 1, httpMethod: 'GET' },
+    'GetSchemaOverview_v1': { interface: 'IEconItems_440', name: 'GetSchemaOverview', version: 1, httpMethod: 'GET' },
+    'GetSchemaURL_v1': { interface: 'IEconItems_440', name: 'GetSchemaURL', version: 1, httpMethod: 'GET' },
+    'GetStoreMetaData_v1': { interface: 'IEconItems_440', name: 'GetStoreMetaData', version: 1, httpMethod: 'GET' },
+    'GetStoreStatus_v1': { interface: 'IEconItems_440', name: 'GetStoreStatus', version: 1, httpMethod: 'GET' },
+  },
+  'IEconItems_570': {
+    'GetPlayerItems_v1': { interface: 'IEconItems_570', name: 'GetPlayerItems', version: 1, httpMethod: 'GET' },
+    'GetStoreMetaData_v1': { interface: 'IEconItems_570', name: 'GetStoreMetaData', version: 1, httpMethod: 'GET' },
+  },
+  'IEconItems_583950': {
+    'GetEquippedPlayerItems_v1': { interface: 'IEconItems_583950', name: 'GetEquippedPlayerItems', version: 1, httpMethod: 'GET' },
+  },
+  'IEconItems_620': {
+    'GetPlayerItems_v1': { interface: 'IEconItems_620', name: 'GetPlayerItems', version: 1, httpMethod: 'GET' },
+    'GetSchema_v1': { interface: 'IEconItems_620', name: 'GetSchema', version: 1, httpMethod: 'GET' },
+  },
+  'IEconItems_730': {
+    'GetPlayerItems_v1': { interface: 'IEconItems_730', name: 'GetPlayerItems', version: 1, httpMethod: 'GET' },
+    'GetSchema_v2': { interface: 'IEconItems_730', name: 'GetSchema', version: 2, httpMethod: 'GET' },
+    'GetSchemaURL_v2': { interface: 'IEconItems_730', name: 'GetSchemaURL', version: 2, httpMethod: 'GET' },
+    'GetStoreMetaData_v1': { interface: 'IEconItems_730', name: 'GetStoreMetaData', version: 1, httpMethod: 'GET' },
   },
   'IGCVersion_1046930': {
     'GetClientVersion_v1': { interface: 'IGCVersion_1046930', name: 'GetClientVersion', version: 1, httpMethod: 'GET' },
@@ -416,8 +1271,6 @@ export const methodInfo = {
     'GetBucketizedData_v1': { interface: 'IPortal2Leaderboards_620', name: 'GetBucketizedData', version: 1, httpMethod: 'GET' },
   },
   'ISteamApps': {
-    'GetAppList_v1': { interface: 'ISteamApps', name: 'GetAppList', version: 1, httpMethod: 'GET' },
-    'GetAppList_v2': { interface: 'ISteamApps', name: 'GetAppList', version: 2, httpMethod: 'GET' },
     'GetSDRConfig_v1': { interface: 'ISteamApps', name: 'GetSDRConfig', version: 1, httpMethod: 'GET' },
     'GetServersAtAddress_v1': { interface: 'ISteamApps', name: 'GetServersAtAddress', version: 1, httpMethod: 'GET' },
     'UpToDateCheck_v1': { interface: 'ISteamApps', name: 'UpToDateCheck', version: 1, httpMethod: 'GET' },
@@ -426,10 +1279,18 @@ export const methodInfo = {
     'PlayerStats_v1': { interface: 'ISteamBroadcast', name: 'PlayerStats', version: 1, httpMethod: 'POST' },
     'ViewerHeartbeat_v1': { interface: 'ISteamBroadcast', name: 'ViewerHeartbeat', version: 1, httpMethod: 'GET' },
   },
+  'ISteamCDN': {
+    'SetClientFilters_v1': { interface: 'ISteamCDN', name: 'SetClientFilters', version: 1, httpMethod: 'POST' },
+    'SetPerformanceStats_v1': { interface: 'ISteamCDN', name: 'SetPerformanceStats', version: 1, httpMethod: 'POST' },
+  },
   'ISteamDirectory': {
     'GetCMList_v1': { interface: 'ISteamDirectory', name: 'GetCMList', version: 1, httpMethod: 'GET' },
     'GetCMListForConnect_v1': { interface: 'ISteamDirectory', name: 'GetCMListForConnect', version: 1, httpMethod: 'GET' },
     'GetSteamPipeDomains_v1': { interface: 'ISteamDirectory', name: 'GetSteamPipeDomains', version: 1, httpMethod: 'GET' },
+  },
+  'ISteamEconomy': {
+    'GetAssetClassInfo_v1': { interface: 'ISteamEconomy', name: 'GetAssetClassInfo', version: 1, httpMethod: 'GET' },
+    'GetAssetPrices_v1': { interface: 'ISteamEconomy', name: 'GetAssetPrices', version: 1, httpMethod: 'GET' },
   },
   'ISteamNews': {
     'GetNewsForApp_v1': { interface: 'ISteamNews', name: 'GetNewsForApp', version: 1, httpMethod: 'GET' },
@@ -438,6 +1299,18 @@ export const methodInfo = {
   'ISteamRemoteStorage': {
     'GetCollectionDetails_v1': { interface: 'ISteamRemoteStorage', name: 'GetCollectionDetails', version: 1, httpMethod: 'POST' },
     'GetPublishedFileDetails_v1': { interface: 'ISteamRemoteStorage', name: 'GetPublishedFileDetails', version: 1, httpMethod: 'POST' },
+    'GetUGCFileDetails_v1': { interface: 'ISteamRemoteStorage', name: 'GetUGCFileDetails', version: 1, httpMethod: 'GET' },
+  },
+  'ISteamUser': {
+    'GetFriendList_v1': { interface: 'ISteamUser', name: 'GetFriendList', version: 1, httpMethod: 'GET' },
+    'GetPlayerBans_v1': { interface: 'ISteamUser', name: 'GetPlayerBans', version: 1, httpMethod: 'GET' },
+    'GetPlayerSummaries_v1': { interface: 'ISteamUser', name: 'GetPlayerSummaries', version: 1, httpMethod: 'GET' },
+    'GetPlayerSummaries_v2': { interface: 'ISteamUser', name: 'GetPlayerSummaries', version: 2, httpMethod: 'GET' },
+    'GetUserGroupList_v1': { interface: 'ISteamUser', name: 'GetUserGroupList', version: 1, httpMethod: 'GET' },
+    'ResolveVanityURL_v1': { interface: 'ISteamUser', name: 'ResolveVanityURL', version: 1, httpMethod: 'GET' },
+  },
+  'ISteamUserAuth': {
+    'AuthenticateUserTicket_v1': { interface: 'ISteamUserAuth', name: 'AuthenticateUserTicket', version: 1, httpMethod: 'GET' },
   },
   'ISteamUserOAuth': {
     'GetTokenDetails_v1': { interface: 'ISteamUserOAuth', name: 'GetTokenDetails', version: 1, httpMethod: 'GET' },
@@ -447,13 +1320,51 @@ export const methodInfo = {
     'GetGlobalAchievementPercentagesForApp_v2': { interface: 'ISteamUserStats', name: 'GetGlobalAchievementPercentagesForApp', version: 2, httpMethod: 'GET' },
     'GetGlobalStatsForGame_v1': { interface: 'ISteamUserStats', name: 'GetGlobalStatsForGame', version: 1, httpMethod: 'GET' },
     'GetNumberOfCurrentPlayers_v1': { interface: 'ISteamUserStats', name: 'GetNumberOfCurrentPlayers', version: 1, httpMethod: 'GET' },
+    'GetPlayerAchievements_v1': { interface: 'ISteamUserStats', name: 'GetPlayerAchievements', version: 1, httpMethod: 'GET' },
+    'GetSchemaForGame_v1': { interface: 'ISteamUserStats', name: 'GetSchemaForGame', version: 1, httpMethod: 'GET' },
+    'GetSchemaForGame_v2': { interface: 'ISteamUserStats', name: 'GetSchemaForGame', version: 2, httpMethod: 'GET' },
+    'GetUserStatsForGame_v1': { interface: 'ISteamUserStats', name: 'GetUserStatsForGame', version: 1, httpMethod: 'GET' },
+    'GetUserStatsForGame_v2': { interface: 'ISteamUserStats', name: 'GetUserStatsForGame', version: 2, httpMethod: 'GET' },
   },
   'ISteamWebAPIUtil': {
     'GetServerInfo_v1': { interface: 'ISteamWebAPIUtil', name: 'GetServerInfo', version: 1, httpMethod: 'GET' },
     'GetSupportedAPIList_v1': { interface: 'ISteamWebAPIUtil', name: 'GetSupportedAPIList', version: 1, httpMethod: 'GET' },
   },
+  'ITFItems_440': {
+    'GetGoldenWrenches_v1': { interface: 'ITFItems_440', name: 'GetGoldenWrenches', version: 1, httpMethod: 'GET' },
+    'GetGoldenWrenches_v2': { interface: 'ITFItems_440', name: 'GetGoldenWrenches', version: 2, httpMethod: 'GET' },
+  },
+  'ITFPromos_440': {
+    'GetItemID_v1': { interface: 'ITFPromos_440', name: 'GetItemID', version: 1, httpMethod: 'GET' },
+    'GrantItem_v1': { interface: 'ITFPromos_440', name: 'GrantItem', version: 1, httpMethod: 'POST' },
+  },
+  'ITFPromos_620': {
+    'GetItemID_v1': { interface: 'ITFPromos_620', name: 'GetItemID', version: 1, httpMethod: 'GET' },
+    'GrantItem_v1': { interface: 'ITFPromos_620', name: 'GrantItem', version: 1, httpMethod: 'POST' },
+  },
   'ITFSystem_440': {
     'GetWorldStatus_v1': { interface: 'ITFSystem_440', name: 'GetWorldStatus', version: 1, httpMethod: 'GET' },
+  },
+  'IGameServersService': {
+    'GetAccountList_v1': { interface: 'IGameServersService', name: 'GetAccountList', version: 1, httpMethod: 'GET' },
+    'CreateAccount_v1': { interface: 'IGameServersService', name: 'CreateAccount', version: 1, httpMethod: 'POST' },
+    'SetMemo_v1': { interface: 'IGameServersService', name: 'SetMemo', version: 1, httpMethod: 'POST' },
+    'ResetLoginToken_v1': { interface: 'IGameServersService', name: 'ResetLoginToken', version: 1, httpMethod: 'POST' },
+    'DeleteAccount_v1': { interface: 'IGameServersService', name: 'DeleteAccount', version: 1, httpMethod: 'POST' },
+    'GetAccountPublicInfo_v1': { interface: 'IGameServersService', name: 'GetAccountPublicInfo', version: 1, httpMethod: 'GET' },
+    'QueryLoginToken_v1': { interface: 'IGameServersService', name: 'QueryLoginToken', version: 1, httpMethod: 'GET' },
+    'GetServerSteamIDsByIP_v1': { interface: 'IGameServersService', name: 'GetServerSteamIDsByIP', version: 1, httpMethod: 'GET' },
+    'GetServerIPsBySteamID_v1': { interface: 'IGameServersService', name: 'GetServerIPsBySteamID', version: 1, httpMethod: 'GET' },
+    'QueryByFakeIP_v1': { interface: 'IGameServersService', name: 'QueryByFakeIP', version: 1, httpMethod: 'GET' },
+  },
+  'IPlayerService': {
+    'IsPlayingSharedGame_v1': { interface: 'IPlayerService', name: 'IsPlayingSharedGame', version: 1, httpMethod: 'GET' },
+    'RecordOfflinePlaytime_v1': { interface: 'IPlayerService', name: 'RecordOfflinePlaytime', version: 1, httpMethod: 'POST' },
+    'GetRecentlyPlayedGames_v1': { interface: 'IPlayerService', name: 'GetRecentlyPlayedGames', version: 1, httpMethod: 'GET' },
+    'GetOwnedGames_v1': { interface: 'IPlayerService', name: 'GetOwnedGames', version: 1, httpMethod: 'GET' },
+    'GetSteamLevel_v1': { interface: 'IPlayerService', name: 'GetSteamLevel', version: 1, httpMethod: 'GET' },
+    'GetBadges_v1': { interface: 'IPlayerService', name: 'GetBadges', version: 1, httpMethod: 'GET' },
+    'GetCommunityBadgeProgress_v1': { interface: 'IPlayerService', name: 'GetCommunityBadgeProgress', version: 1, httpMethod: 'GET' },
   },
   'IAuthenticationService': {
     'PollAuthSessionStatus_v1': { interface: 'IAuthenticationService', name: 'PollAuthSessionStatus', version: 1, httpMethod: 'POST' },
@@ -469,6 +1380,11 @@ export const methodInfo = {
   'IBroadcastService': {
     'PostGameDataFrameRTMP_v1': { interface: 'IBroadcastService', name: 'PostGameDataFrameRTMP', version: 1, httpMethod: 'POST' },
   },
+  'IContentServerConfigService': {
+    'SetSteamCacheClientFilters_v1': { interface: 'IContentServerConfigService', name: 'SetSteamCacheClientFilters', version: 1, httpMethod: 'POST' },
+    'GetSteamCacheNodeParams_v1': { interface: 'IContentServerConfigService', name: 'GetSteamCacheNodeParams', version: 1, httpMethod: 'GET' },
+    'SetSteamCachePerformanceStats_v1': { interface: 'IContentServerConfigService', name: 'SetSteamCachePerformanceStats', version: 1, httpMethod: 'POST' },
+  },
   'IContentServerDirectoryService': {
     'GetCDNForVideo_v1': { interface: 'IContentServerDirectoryService', name: 'GetCDNForVideo', version: 1, httpMethod: 'GET' },
     'PickSingleContentServer_v1': { interface: 'IContentServerDirectoryService', name: 'PickSingleContentServer', version: 1, httpMethod: 'GET' },
@@ -478,14 +1394,29 @@ export const methodInfo = {
   },
   'IPublishedFileService': {
     'GetUserVoteSummary_v1': { interface: 'IPublishedFileService', name: 'GetUserVoteSummary', version: 1, httpMethod: 'GET' },
+    'QueryFiles_v1': { interface: 'IPublishedFileService', name: 'QueryFiles', version: 1, httpMethod: 'GET' },
+    'GetSubSectionData_v1': { interface: 'IPublishedFileService', name: 'GetSubSectionData', version: 1, httpMethod: 'GET' },
+    'GetDetails_v1': { interface: 'IPublishedFileService', name: 'GetDetails', version: 1, httpMethod: 'GET' },
+    'GetUserFiles_v1': { interface: 'IPublishedFileService', name: 'GetUserFiles', version: 1, httpMethod: 'GET' },
+    'GetUserFileCount_v1': { interface: 'IPublishedFileService', name: 'GetUserFileCount', version: 1, httpMethod: 'GET' },
   },
-  'IPlayerService': {
-    'RecordOfflinePlaytime_v1': { interface: 'IPlayerService', name: 'RecordOfflinePlaytime', version: 1, httpMethod: 'POST' },
+  'IEconService': {
+    'GetTradeHistory_v1': { interface: 'IEconService', name: 'GetTradeHistory', version: 1, httpMethod: 'GET' },
+    'GetTradeStatus_v1': { interface: 'IEconService', name: 'GetTradeStatus', version: 1, httpMethod: 'GET' },
+    'GetTradeOffers_v1': { interface: 'IEconService', name: 'GetTradeOffers', version: 1, httpMethod: 'GET' },
+    'GetTradeOffer_v1': { interface: 'IEconService', name: 'GetTradeOffer', version: 1, httpMethod: 'GET' },
+    'GetTradeOffersSummary_v1': { interface: 'IEconService', name: 'GetTradeOffersSummary', version: 1, httpMethod: 'GET' },
+    'GetTradeHoldDurations_v1': { interface: 'IEconService', name: 'GetTradeHoldDurations', version: 1, httpMethod: 'GET' },
   },
   'IGameNotificationsService': {
     'UserCreateSession_v1': { interface: 'IGameNotificationsService', name: 'UserCreateSession', version: 1, httpMethod: 'POST' },
     'UserUpdateSession_v1': { interface: 'IGameNotificationsService', name: 'UserUpdateSession', version: 1, httpMethod: 'POST' },
     'UserDeleteSession_v1': { interface: 'IGameNotificationsService', name: 'UserDeleteSession', version: 1, httpMethod: 'POST' },
+  },
+  'IInventoryService': {
+    'SplitItemStack_v1': { interface: 'IInventoryService', name: 'SplitItemStack', version: 1, httpMethod: 'POST' },
+    'CombineItemStacks_v1': { interface: 'IInventoryService', name: 'CombineItemStacks', version: 1, httpMethod: 'POST' },
+    'GetPriceSheet_v1': { interface: 'IInventoryService', name: 'GetPriceSheet', version: 1, httpMethod: 'GET' },
   },
   'IWishlistService': {
     'GetWishlistSortedFiltered_v1': { interface: 'IWishlistService', name: 'GetWishlistSortedFiltered', version: 1, httpMethod: 'GET' },
@@ -495,11 +1426,15 @@ export const methodInfo = {
   'IStoreService': {
     'GetGamesFollowed_v1': { interface: 'IStoreService', name: 'GetGamesFollowed', version: 1, httpMethod: 'GET' },
     'GetGamesFollowedCount_v1': { interface: 'IStoreService', name: 'GetGamesFollowedCount', version: 1, httpMethod: 'GET' },
+    'GetAppList_v1': { interface: 'IStoreService', name: 'GetAppList', version: 1, httpMethod: 'GET' },
     'GetRecommendedTagsForUser_v1': { interface: 'IStoreService', name: 'GetRecommendedTagsForUser', version: 1, httpMethod: 'GET' },
   },
   'IHelpRequestLogsService': {
     'UploadUserApplicationLog_v1': { interface: 'IHelpRequestLogsService', name: 'UploadUserApplicationLog', version: 1, httpMethod: 'POST' },
     'GetApplicationLogDemand_v1': { interface: 'IHelpRequestLogsService', name: 'GetApplicationLogDemand', version: 1, httpMethod: 'POST' },
+  },
+  'ICheatReportingService': {
+    'ReportCheatData_v1': { interface: 'ICheatReportingService', name: 'ReportCheatData', version: 1, httpMethod: 'POST' },
   },
 } as const;
 export type MethodInfoMap = typeof methodInfo;

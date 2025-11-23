@@ -30,7 +30,7 @@ async function main() {
     //   );
     //   console.log(`      ${item.url}`);
     // });
-    const appList = await steam.ISteamApps.GetAppList_v2({});
+    const appList = await steam.IStoreService.GetAppList_v1();
     console.log(appList);
   } catch (error: any) {
     console.error('\n❌ API Call Failed:');

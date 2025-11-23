@@ -7,11 +7,13 @@ import {
 
 const BASE_URL = 'https://api.steampowered.com';
 
+type SteamMethod<P> = (...args: {} extends P ? [params?: P] : [params: P]) => Promise<any>;
+
 export type SteamClient = {
-  [K in InterfaceName]: {
-    [M in MethodName<K>]: (
-      params: M extends keyof MethodParamsMap ? MethodParamsMap[M] : never,
-    ) => Promise<any>;
+  [K in keyof typeof methodInfo]: {
+    [M in keyof (typeof methodInfo)[K]]: M extends keyof MethodParamsMap
+      ? SteamMethod<MethodParamsMap[M]>
+      : never;
   };
 };
 
@@ -34,7 +36,7 @@ export function createSteamClient(apiKey: string): SteamClient {
               return undefined;
             }
 
-            return async (params: any) => {
+            return async (params: any = {}) => {
               const { name, version, httpMethod } = methodMeta;
               const url = `${BASE_URL}/${interfaceName}/${name}/v${version}/`;
 

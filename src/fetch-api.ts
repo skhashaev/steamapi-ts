@@ -1,8 +1,9 @@
 import { writeFile } from 'node:fs/promises';
+import 'dotenv/config';
 
-const apiToken = process.env.API_TOKEN;
+const apiToken = process.env.API_KEY;
 
-export async function fetchApi() {
+async function main() {
   const response = await fetch(
     `https://api.steampowered.com/ISteamWebAPIUtil/GetSupportedAPIList/v1/?key=${apiToken}`,
   );
@@ -15,3 +16,5 @@ export async function fetchApi() {
     { encoding: 'utf-8' },
   );
 }
+
+main();

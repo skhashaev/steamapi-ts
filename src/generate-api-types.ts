@@ -74,6 +74,7 @@ function generateApiTypes() {
       const httpMethod = (method.httpmethod ?? 'GET').toUpperCase();
 
       for (const param of methodParameters) {
+        if (param.name === 'key') continue;
         const tsType = toTsType(param.type);
         const optionalMark = param.optional ? '?' : '';
         const finalType = param.optional ? `${tsType} | undefined` : tsType;
