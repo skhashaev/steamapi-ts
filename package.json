@@ -1,5 +1,5 @@
 {
-  "name": "steam-web-api-ts",
+  "name": "@skhashaev/steamapi-ts",
   "version": "0.0.1",
   "description": "Steam API powered by TypeScript",
   "type": "module",
